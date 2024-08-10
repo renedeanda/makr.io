@@ -4,8 +4,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f4f8;
+  background-color: #f8f9fa;
   color: #333;
+}
+
+body.dark {
+  background-color: #1A202C;
+  color: #A0AEC0;
 }
 
 a {
@@ -19,6 +24,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  color: inherit; /* Use regular text color */
 }
 
 p {

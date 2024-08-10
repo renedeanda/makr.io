@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { ThemeProvider } from '../context/ThemeContext';
 import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <title>15 Utility Web Apps in 30 Days</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -54,7 +55,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }
 
