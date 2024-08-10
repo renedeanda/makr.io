@@ -1,11 +1,10 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
   color: #333;
 }
 
@@ -13,4 +12,15 @@ a {
   text-decoration: none;
   color: inherit;
 }
-    
+
+.container {
+  max-width: 1200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}

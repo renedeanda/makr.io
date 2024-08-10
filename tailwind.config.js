@@ -1,4 +1,3 @@
-
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -7,14 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#3498db',
-        secondary: '#2ecc71',
+        primary: '#6366F1', // Indigo
+        secondary: '#4F46E5', // Purple
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
       },
     },
   },
   plugins: [],
 }
-    

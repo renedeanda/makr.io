@@ -1,4 +1,3 @@
-
 'use client';
 
 import Head from 'next/head';
@@ -16,30 +15,33 @@ const projects = [
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto px-6 py-10">
       <Head>
         <title>15 Utility Web Apps in 30 Days</title>
         <meta name="description" content="A collection of 15 utility web apps created in 30 days" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <header className="text-center my-10">
-        <h1 className="text-4xl font-bold text-primary">15 Utility Web Apps in 30 Days</h1>
-        <p className="text-lg text-gray-600 mt-4">A journey of creating simple, yet powerful tools for the web. 🚀</p>
+      <header className="text-center mb-12">
+        <h1 className="text-5xl font-extrabold text-gray-800">15 Utility Web Apps in 30 Days</h1>
+        <p className="text-xl text-gray-600 mt-4">Crafted with love and care to enhance your productivity. 🚀</p>
       </header>
       
-      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <a key={index} href={project.link} className="block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-            <h2 className="text-2xl font-semibold text-secondary flex items-center">
-              {project.emoji} {project.title} 
+          <a 
+            key={index} 
+            href={project.link} 
+            className="block p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
+          >
+            <h2 className="text-3xl font-semibold text-secondary flex items-center">
+              {project.emoji} {project.title}
               <FaExternalLinkAlt className="ml-2 text-primary" />
             </h2>
-            <p className="text-gray-700 mt-2">{project.description}</p>
+            <p className="text-gray-700 mt-4">{project.description}</p>
           </a>
         ))}
       </main>
     </div>
   );
 }
-    
