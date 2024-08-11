@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
       <Head>
-        <title>15 Utility Web Apps in 30 Days</title>
-        <meta name="description" content="A collection of 15 utility web apps created in 30 days" />
+        <title>Make with AI | 15 Web Apps in 30 Days</title>
+        <meta name="description" content="A collection of 15 utility web apps made with AI in 30 days" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -44,7 +44,7 @@ export default function Home() {
 
       <div className="flex justify-center items-center p-6 flex-grow">
         <header className="text-center">
-          <h1 className="text-4xl font-extrabold">15 Utility Web Apps in 30 Days</h1>
+          <h1 className="text-4xl font-extrabold">15 Web Apps Made with AI in 30 Days</h1>
           <p className="text-xl mt-4">
             Crafted with 🧡 + 🤖 by <a href="https://renedeanda.com/?utm_source=makr_15" className="text-amber-500 hover:underline">René DeAnda</a>
           </p>
