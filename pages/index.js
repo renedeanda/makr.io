@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Themed Clickable Banner with Theme Button */}
       <div className={`py-2 text-center flex justify-between items-center px-4 ${theme === 'dark' ? 'bg-gray-700 text-gray-200' : 'bg-gray-100 text-gray-900'}`}>
-        <a href="https://rede.io/?utm_source=utility_web_apps" className="font-bold hover:underline">
+        <a href="https://rede.io/?utm_source=makr_15" className="font-bold hover:underline">
           Check out 📚 Rede.io for your daily tech newsletter!
         </a>
         <button
