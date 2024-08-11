@@ -19,12 +19,15 @@ export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const totalProjects = 15; // Set your target number of projects
   const completedProjects = projects.length;
+  
+  const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF'; // Example colors for dark and light themes
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
       <Head>
         <title>Make with AI | 15 Web Apps in 30 Days</title>
         <meta name="description" content="A collection of 15 utility web apps made with AI in 30 days" />
+        <meta name="theme-color" content={themeColor} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
