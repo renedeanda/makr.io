@@ -17,6 +17,8 @@ const projects = [
 
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const totalProjects = 15; // Set your target number of projects
+  const completedProjects = projects.length;
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
@@ -45,6 +47,9 @@ export default function Home() {
           <h1 className="text-4xl font-extrabold">15 Utility Web Apps in 30 Days</h1>
           <p className="text-xl mt-4">
             Crafted with 🧡 + 🤖 by <a href="https://renedeanda.com/?utm_source=makr_15" className="text-amber-500 hover:underline">René DeAnda</a>
+          </p>
+          <p className="text-xl mt-4 font-bold">
+            Status: {completedProjects} / {totalProjects} completed
           </p>
         </header>
       </div>
