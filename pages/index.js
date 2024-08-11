@@ -58,7 +58,7 @@ export default function Home() {
         {projects.map((project, index) => (
           <a
             key={index}
-            href={project.link}
+            href={`${project.link}?utm_source=makr_15`}
             target="_blank"
             className="block p-8 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
           >
