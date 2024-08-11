@@ -54,7 +54,7 @@ export default function Home() {
         </header>
       </div>
 
-      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 lg:px-8">
+      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 lg:px-8 mb-16">
         {projects.map((project, index) => (
           <a
             key={index}
