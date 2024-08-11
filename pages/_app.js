@@ -23,16 +23,16 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Head>
-        <title>15 Utility Web Apps in 30 Days</title>
+        <title>Make with AI | 15 Web Apps in 30 Days</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="A collection of 15 utility web apps created in 30 days by René DeAnda" />
+        <meta name="description" content="A collection of 15 utility web apps made with AI in 30 days by René DeAnda" />
         <meta name="keywords" content="utility apps, web tools, productivity, tech" />
-        <meta property="og:title" content="Makr.io | 15 Utility Web Apps in 30 Days by René DeAnda" />
-        <meta property="og:description" content="A collection of 15 utility web apps created in 30 days by René DeAnda" />
+        <meta property="og:title" content="Makr.io | 15 Utility Web Apps in 30 Days with AI by René DeAnda" />
+        <meta property="og:description" content="A collection of 15 utility web apps made with AI in 30 days by René DeAnda" />
         <meta property="og:image" content="/favicon.svg" />
         <meta property="og:url" content="https://makr.io" />
         <meta name="twitter:title" content="15 Utility Web Apps in 30 Days" />
-        <meta name="twitter:description" content="A collection of 15 utility web apps created in 30 days" />
+        <meta name="twitter:description" content="A collection of 15 utility web apps made with AI in 30 days" />
         <meta name="twitter:image" content="/favicon.svg" />
         <meta name="twitter:card" content="summary_large_image" />
 
