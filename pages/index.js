@@ -12,7 +12,9 @@ const projects = [
   { title: "DMARC Domain Checker", description: "Check DMARC records", link: "https://dmarc.makr.io", emoji: "🔍" },
   { title: "Email Headers Analyzer", description: "Analyze email headers", link: "https://emailheaders.makr.io", emoji: "📨" },
   { title: "Email Subject Line Tester", description: "Test your email subject lines", link: "https://subjectline.makr.io", emoji: "✉️" },
-  { title: "Quotes Generator", description: "Generate inspirational quotes", link: "https://quotes.makr.io", emoji: "💬" },
+  { title: "Quotes Collection", description: "Browse a collection of inspirational quotes", link: "https://quotes.makr.io", emoji: "💬" },
+  { title: "Country Explorer", description: "Learn about and compare countries", link: "https://countries.makr.io", emoji: "🌍" },
+  { title: "Color Picker", description: "Pick and explore colors", link: "https://color.makr.io", emoji: "🎨" },
 ];
 
 export default function Home() {
