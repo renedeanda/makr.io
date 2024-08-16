@@ -1,5 +1,3 @@
-'use client';
-
 import Head from 'next/head';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
