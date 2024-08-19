@@ -13,6 +13,7 @@ const projects = [
   { title: "Quotes Collection", description: "Browse a collection of inspirational quotes", link: "https://quotes.makr.io", emoji: "💬" },
   { title: "Country Explorer", description: "Learn about and compare countries", link: "https://countries.makr.io", emoji: "🌍" },
   { title: "Color Picker", description: "Pick and explore colors", link: "https://color.makr.io", emoji: "🎨" },
+  { title: "Book Recommendations", description: "Create and share reading lists easily", link: "https://books.makr.io", emoji: "📚" },
 ];
 
 export default function Home() {
