@@ -14,6 +14,7 @@ const projects = [
   { title: "Country Explorer", description: "Learn about and compare countries", link: "https://countries.makr.io", emoji: "🌍" },
   { title: "Color Picker", description: "Pick and explore colors", link: "https://color.makr.io", emoji: "🎨" },
   { title: "Book Recommendations", description: "Create and share reading lists easily", link: "https://books.makr.io", emoji: "📚" },
+  { title: "Pomodoro Timer", description: "A simple, beautiful pomodoro timer", link: "https://pomodoro.makr.io", emoji: "⏲️" },
 ];
 
 export default function Home() {
