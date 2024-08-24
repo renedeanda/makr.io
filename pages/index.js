@@ -15,6 +15,7 @@ const projects = [
   { title: "Color Picker", description: "Pick and explore colors", link: "https://color.makr.io", emoji: "🎨" },
   { title: "Book Recommendations", description: "Create and share reading lists easily", link: "https://books.makr.io", emoji: "📚" },
   { title: "Pomodoro Timer", description: "A simple, beautiful pomodoro timer", link: "https://pomodoro.makr.io", emoji: "⏲️" },
+  { title: "Agenda Planner", description: "Create an agenda with a built-in timer and export to PDF", link: "https://agenda.makr.io", emoji: "📝" },
 ];
 
 export default function Home() {
