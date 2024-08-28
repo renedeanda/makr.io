@@ -18,6 +18,7 @@ const projects = [
   { title: "Agenda Planner", description: "Create an agenda with a built-in timer and export to PDF", link: "https://agenda.makr.io", emoji: "📝" },
   { title: "HN Enhanced", description: "Explore the latest tech news and jobs with this modern client", link: "https://hn.makr.io", emoji: "🤓" },
   { title: "Git Repo Explorer", description: "Search GitHub repos with AI keyword detection", link: "https://git.makr.io", emoji: "📓" },
+  { title: "Event Countdown", description: "Create countdowns for things you’re looking forward to", link: "https://countdown.makr.io", emoji: "🎉" },
 ];
 
 export default function Home() {
