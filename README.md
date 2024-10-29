@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Welcome to **makr.io**! This repository showcases **15 web apps developed in just 30 days** with the assistance of AI, primarily using **Claude.ai** and **ChatGPT**. Each project is designed to solve specific problems and provide useful tools for users. Feel free to explore, use, and modify these projects as you see fit!
+Welcome to [**makr.io**](https://makr.io)! This repository showcases **15 web apps developed in just 30 days** with the assistance of AI, primarily using **Claude.ai** and **ChatGPT**. Each project is designed to solve specific problems and provide useful tools for users. Feel free to explore, use, and modify these projects as you see fit!
 
 ## Projects
 
