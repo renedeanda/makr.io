@@ -37,23 +37,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      {/* Themed Banner with GitHub Link and Theme Button */}
+      {/* Themed Banner with GitHub Icon and Theme Button */}
       <div className={`py-2 text-center flex justify-between items-center px-4 ${theme === 'dark' ? 'bg-gray-700 text-gray-200' : 'bg-gray-100 text-gray-900'}`}>
-        <div className="flex space-x-4">
-          <a href="https://rede.io/?utm_source=makr_15" className="font-bold hover:underline">
-            Check out 📚 Rede.io for your daily tech newsletter!
+        <a href="https://rede.io/?utm_source=makr_15" className="font-bold hover:underline">
+          Check out 📚 Rede.io for your daily tech newsletter!
+        </a>
+        <div className="flex items-center space-x-2">
+          <a
+            href="https://github.com/renedeanda/makr.io"
+            target="_blank"
+            className={`p-2 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-gray-600 hover:bg-gray-500' : 'bg-gray-200 hover:bg-gray-300'}`}
+            aria-label="GitHub Repository"
+          >
+            <FaGithub className="text-xl" />
           </a>
-          <a href="https://github.com/renedeanda/makr.io" target="_blank" className="font-bold hover:underline flex items-center">
-            <FaGithub className="mr-1" /> GitHub
-          </a>
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-gray-600 border-gray-500' : 'bg-gray-200 border-gray-300'}`}
+            aria-label="Toggle Dark Mode"
+          >
+            {theme === 'dark' ? <FaSun className="text-yellow-500" /> : <FaMoon className="text-blue-500" />}
+          </button>
         </div>
-        <button
-          onClick={toggleTheme}
-          className={`p-2 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-gray-600 border-gray-500' : 'bg-gray-200 border-gray-300'}`}
-          aria-label="Toggle Dark Mode"
-        >
-          {theme === 'dark' ? <FaSun className="text-yellow-500" /> : <FaMoon className="text-blue-500" />}
-        </button>
       </div>
 
       <div className="flex justify-center items-center p-6 flex-grow">
