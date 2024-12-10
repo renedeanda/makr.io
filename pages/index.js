@@ -26,7 +26,6 @@ export default function Home() {
   const totalProjects = 15;
   const completedProjects = projects.length;
   const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF';
-  const productHuntPostId = process.env.NEXT_PUBLIC_PRODUCT_HUNT_POST_ID;
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
