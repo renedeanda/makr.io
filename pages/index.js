@@ -25,7 +25,6 @@ export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const totalProjects = 15;
   const completedProjects = projects.length;
-  
   const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF';
 
   return (
@@ -70,6 +69,24 @@ export default function Home() {
           <p className="text-xl mt-4 font-bold">
             Status: {completedProjects} / {totalProjects} completed
           </p>
+
+          {/* Product Hunt Badge */}
+          <div className="mt-8 flex justify-center">
+            <a 
+              href="https://www.producthunt.com/posts/makr-io?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-makr&#0045;io" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=691220&theme=light" 
+                alt="Makr.io - AI-built Next.js web apps – open-sourced for anyone to adapt" 
+                width="250" 
+                height="54" 
+                style={{ width: '250px', height: '54px' }}
+                className="hover:opacity-90 transition-opacity"
+              />
+            </a>
+          </div>
         </header>
       </div>
 
