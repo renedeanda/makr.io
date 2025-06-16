@@ -50,7 +50,7 @@ export default function Home() {
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
       <Head>
         <title>Make with AI | Recent Projects & 15 Apps Challenge</title>
-        <meta name="description" content="Recent AI-powered web apps and the complete collection of 15 utility web apps made with AI in 30 days" />
+        <meta name="description" content="Recent AI-built web apps and the complete collection of 15 utility web apps made with AI in 30 days" />
         <meta name="theme-color" content={themeColor} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
@@ -83,9 +83,9 @@ export default function Home() {
       <div className="py-8 px-6 lg:px-8">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold mb-2">✨ Recent Projects</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">Latest AI-powered web applications</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">Latest AI-built web applications</p>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {recentProjects.map((project, index) => (
             <div
@@ -94,13 +94,13 @@ export default function Home() {
             >
               <h3 className="text-xl font-semibold flex items-center">
                 {project.emoji} {project.title}
-                {project.madeWith && (
-                  <span className="ml-2 text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full font-medium">
-                    Made with {project.madeWith}
-                  </span>
-                )}
               </h3>
               <p className="text-lg mt-3">{project.description}</p>
+              {project.madeWith && (
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  Made with {project.madeWith}
+                </p>
+              )}
               <div className="flex space-x-4 mt-4">
                 <a
                   href={`${project.link}?utm_source=makr_recent`}
@@ -146,13 +146,13 @@ export default function Home() {
           >
             <h2 className="text-2xl font-semibold flex items-center">
               {project.emoji} {project.title}
-              {project.madeWith && (
-                <span className="ml-2 text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full font-medium">
-                  Made with {project.madeWith}
-                </span>
-              )}
             </h2>
             <p className="text-xl mt-4">{project.description}</p>
+            {project.madeWith && (
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                Made with {project.madeWith}
+              </p>
+            )}
             <div className="flex space-x-4 mt-4">
               <a
                 href={`${project.link}?utm_source=makr_15`}
