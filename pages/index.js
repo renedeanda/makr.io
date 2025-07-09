@@ -20,6 +20,14 @@ const recentProjects = [
     emoji: "🔐",
     madeWith: "Lovable"
   },
+  {
+    title: "Agent Memory",
+    description: "Learn how AI agents use memory and explore key companies shaping the future of autonomous systems",
+    link: "https://agentmemory.com",
+    githubLink: null,
+    emoji: "🧠",
+    madeWith: "v0"
+  },
 ];
 
 const projects = [
@@ -161,13 +169,15 @@ export default function Home() {
               >
                 Visit Site <FaExternalLinkAlt className="ml-1" />
               </a>
-              <a
-                href={project.githubLink}
-                target="_blank"
-                className="text-primary dark:text-darkText hover:underline flex items-center"
-              >
-                GitHub <FaGithub className="ml-1" />
-              </a>
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  className="text-primary dark:text-darkText hover:underline flex items-center"
+                >
+                  GitHub <FaGithub className="ml-1" />
+                </a>
+              )}
             </div>
           </div>
         ))}
