@@ -23,18 +23,75 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Head>
-        <title>Make with AI | 15 Web Apps in 30 Days</title>
+        <title>Make with AI | AI-Powered Web Apps & Tools Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="A collection of 15 utility web apps made with AI in 30 days by René DeAnda" />
-        <meta name="keywords" content="utility apps, web tools, productivity, tech" />
-        <meta property="og:title" content="Makr.io | 15 Utility Web Apps in 30 Days with AI by René DeAnda" />
-        <meta property="og:description" content="A collection of 15 utility web apps made with AI in 30 days by René DeAnda" />
-        <meta property="og:image" content="/favicon.svg" />
+        <meta name="description" content="Discover innovative AI-powered web applications including AutoRoadmap (product roadmap generator), Rede.io (newsletter platform), and 15+ utility tools built with Claude, ChatGPT, and modern AI technologies." />
+        <meta name="keywords" content="AI web apps, product roadmap generator, AI newsletter platform, utility apps, web tools, productivity, AI-powered tools, Claude AI, ChatGPT, v0, AutoRoadmap, Rede.io, René DeAnda, AI development" />
+        <meta name="author" content="René DeAnda" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Make with AI | AI-Powered Web Apps & Tools by René DeAnda" />
+        <meta property="og:description" content="Innovative AI-powered applications including AutoRoadmap for product roadmaps, Rede.io newsletter platform, and 15+ utility tools built with cutting-edge AI technologies." />
+        <meta property="og:image" content="https://makr.io/og-image.jpg" />
         <meta property="og:url" content="https://makr.io" />
-        <meta name="twitter:title" content="15 Utility Web Apps in 30 Days" />
-        <meta name="twitter:description" content="A collection of 15 utility web apps made with AI in 30 days" />
-        <meta name="twitter:image" content="/favicon.svg" />
+        <meta property="og:site_name" content="Make with AI" />
+        
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI-Powered Web Apps & Tools Portfolio" />
+        <meta name="twitter:description" content="Discover AutoRoadmap, Rede.io, and 15+ innovative AI-powered web applications built with Claude, ChatGPT, and modern AI technologies." />
+        <meta name="twitter:image" content="https://makr.io/og-image.jpg" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="theme-color" content="#3B82F6" />
+        <meta name="msapplication-TileColor" content="#3B82F6" />
+        <link rel="canonical" href="https://makr.io" />
+        
+        {/* Structured Data for Better SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "René DeAnda",
+              "url": "https://makr.io",
+              "sameAs": [
+                "https://renedeanda.com",
+                "https://github.com/renedeanda"
+              ],
+              "jobTitle": "AI Developer & Product Builder",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Make with AI"
+              },
+              "knowsAbout": [
+                "Artificial Intelligence",
+                "Web Development",
+                "Product Development",
+                "AI-powered Applications"
+              ],
+              "creator": [
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "AutoRoadmap",
+                  "url": "https://autoroadmap.com",
+                  "description": "AI-powered product roadmap generator",
+                  "applicationCategory": "ProductivityApplication"
+                },
+                {
+                  "@type": "SoftwareApplication", 
+                  "name": "Rede.io",
+                  "url": "https://rede.io",
+                  "description": "AI-powered newsletter agent platform",
+                  "applicationCategory": "CommunicationApplication"
+                }
+              ]
+            })
+          }}
+        />
       </Head>
 
       {/* Global Site Tag (gtag.js) - Google Analytics */}
