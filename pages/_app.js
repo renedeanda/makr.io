@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Make with AI | AI-Powered Web Apps & Tools by René DeAnda" />
         <meta property="og:description" content="Innovative AI-powered applications including AutoRoadmap for product roadmaps, Rede.io newsletter platform, and 15+ utility tools built with cutting-edge AI technologies." />
-        <meta property="og:image" content="https://makr.io/og-image.jpg" />
+        <meta property="og:image" content="https://makr.io/og-image.png" />
         <meta property="og:url" content="https://makr.io" />
         <meta property="og:site_name" content="Make with AI" />
         
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI-Powered Web Apps & Tools Portfolio" />
         <meta name="twitter:description" content="Discover AutoRoadmap, Rede.io, and 15+ innovative AI-powered web applications built with Claude, ChatGPT, and modern AI technologies." />
-        <meta name="twitter:image" content="https://makr.io/og-image.jpg" />
+        <meta name="twitter:image" content="https://makr.io/og-image.png" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="theme-color" content="#3B82F6" />
