@@ -9,9 +9,8 @@ const recentProjects = [
     description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
     link: "https://gooddad.makr.io",
     githubLink: null,
-    emoji: "🧘",
+    emoji: "🧘‍♂️",
     madeWith: ["Warp", "Claude Code"],
-    aiPowered: true,
     platforms: ["iOS", "Android"]
   },
   {
@@ -83,7 +82,7 @@ const getBrandChipStyles = (tool) => {
     'Claude Code': 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
     'ChatGPT': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
     'OpenAI': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
-    'Warp': 'bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300',
+    'Warp': 'bg-black text-white dark:bg-white dark:text-black',
     'v0': 'bg-black text-white dark:bg-white dark:text-black',
     'Lovable': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
   };
