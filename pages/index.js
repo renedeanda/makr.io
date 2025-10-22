@@ -5,6 +5,16 @@ import { FaSun, FaMoon, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 const recentProjects = [
   {
+    title: "Good Dad",
+    description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
+    link: "https://gooddad.makr.io",
+    githubLink: null,
+    emoji: "🧘",
+    madeWith: ["Warp", "Claude Code"],
+    aiPowered: true,
+    platforms: ["iOS", "Android"]
+  },
+  {
     title: "AutoRoadmap",
     description: "Turn product ideas into actionable roadmaps in seconds. Describe your vision and get professional roadmaps with phases, features, and timelines",
     link: "https://autoroadmap.com",
@@ -70,8 +80,10 @@ const projects = [
 const getBrandChipStyles = (tool) => {
   const brandColors = {
     'Claude': 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
+    'Claude Code': 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
     'ChatGPT': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
     'OpenAI': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+    'Warp': 'bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300',
     'v0': 'bg-black text-white dark:bg-white dark:text-black',
     'Lovable': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
   };
@@ -92,6 +104,19 @@ const MadeWithChips = ({ tools }) => (
   </div>
 );
 
+const PlatformBadges = ({ platforms }) => (
+  <div className="flex flex-wrap gap-1 mt-2">
+    {platforms.map((platform, index) => (
+      <span
+        key={index}
+        className="px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+      >
+        {platform}
+      </span>
+    ))}
+  </div>
+);
+
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const totalProjects = 15;
@@ -102,7 +127,7 @@ export default function Home() {
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
       <Head>
         <title>Make with AI | Recent Projects & 15 Apps Challenge</title>
-        <meta name="description" content="Recent AI-built web apps and the complete collection of 15 utility web apps made with AI in 30 days" />
+        <meta name="description" content="Recent AI-built mobile and web apps and the complete collection of 15 utility web apps made with AI in 30 days" />
         <meta name="theme-color" content={themeColor} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
@@ -135,7 +160,7 @@ export default function Home() {
       <div className="py-8 px-6 lg:px-8">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold mb-2">✨ Recent Projects</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">Latest AI-built web applications</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">Latest AI-built mobile and web applications</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -155,6 +180,9 @@ export default function Home() {
                 {project.emoji} {project.title}
               </h3>
               <p className="text-lg mt-3">{project.description}</p>
+              {project.platforms && (
+                <PlatformBadges platforms={project.platforms} />
+              )}
               {project.madeWith && (
                 <MadeWithChips tools={project.madeWith} />
               )}
