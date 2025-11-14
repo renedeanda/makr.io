@@ -23,25 +23,25 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Head>
-        <title>Make with AI | AI-Powered Web Apps & Tools Portfolio</title>
+        <title>Make with AI | Product Portfolio & AI Development Showcase</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Discover innovative AI-powered web applications including AutoRoadmap (product roadmap generator), Rede.io (newsletter platform), and 15+ utility tools built with Claude, ChatGPT, and modern AI technologies." />
-        <meta name="keywords" content="AI web apps, product roadmap generator, AI newsletter platform, utility apps, web tools, productivity, AI-powered tools, Claude AI, ChatGPT, v0, AutoRoadmap, Rede.io, René DeAnda, AI development" />
+        <meta name="description" content="Showcase of innovative AI-built products by René DeAnda, featuring Good Dad (mindful fatherhood app), AutoRoadmap (AI roadmap generator), Rede.io (newsletter platform), and Product Makr challenge. Built with v0, Claude Code, Bolt.new, and modern AI tools." />
+        <meta name="keywords" content="AI product development, rapid prototyping, AI tools showcase, product portfolio, Good Dad, AutoRoadmap, Rede.io, Product Makr, v0, Claude Code, Bolt.new, ChatGPT, AI-powered apps, René DeAnda, AI builder" />
         <meta name="author" content="René DeAnda" />
         <meta name="robots" content="index, follow" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Make with AI | AI-Powered Web Apps & Tools by René DeAnda" />
-        <meta property="og:description" content="Innovative AI-powered applications including AutoRoadmap for product roadmaps, Rede.io newsletter platform, and 15+ utility tools built with cutting-edge AI technologies." />
+        <meta property="og:title" content="Make with AI | AI Product Development Portfolio by René DeAnda" />
+        <meta property="og:description" content="Portfolio of innovative AI-built products including Good Dad, AutoRoadmap, Rede.io, and Product Makr. Showcasing rapid development with v0, Claude Code, and Bolt.new." />
         <meta property="og:image" content="https://makr.io/og-image.png" />
         <meta property="og:url" content="https://makr.io" />
         <meta property="og:site_name" content="Make with AI" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI-Powered Web Apps & Tools Portfolio" />
-        <meta name="twitter:description" content="Discover AutoRoadmap, Rede.io, and 15+ innovative AI-powered web applications built with Claude, ChatGPT, and modern AI technologies." />
+        <meta name="twitter:title" content="AI Product Development Portfolio & Showcase" />
+        <meta name="twitter:description" content="Innovative AI-built products by René DeAnda: Good Dad, AutoRoadmap, Rede.io, and Product Makr challenge. Built with v0, Claude Code, and Bolt.new." />
         <meta name="twitter:image" content="https://makr.io/og-image.png" />
         
         {/* Additional SEO Meta Tags */}
@@ -62,31 +62,49 @@ function MyApp({ Component, pageProps }) {
                 "https://renedeanda.com",
                 "https://github.com/renedeanda"
               ],
-              "jobTitle": "AI Developer & Product Builder",
+              "jobTitle": "AI Product Builder & Developer",
               "worksFor": {
                 "@type": "Organization",
                 "name": "Make with AI"
               },
               "knowsAbout": [
                 "Artificial Intelligence",
-                "Web Development",
                 "Product Development",
-                "AI-powered Applications"
+                "Rapid Prototyping",
+                "AI-powered Applications",
+                "v0",
+                "Claude Code",
+                "Bolt.new"
               ],
               "creator": [
+                {
+                  "@type": "MobileApplication",
+                  "name": "Good Dad",
+                  "url": "https://gooddad.makr.io",
+                  "description": "Daily mindful reminders to help fathers connect, grow, and thrive",
+                  "applicationCategory": "LifestyleApplication",
+                  "operatingSystem": "iOS, Android"
+                },
                 {
                   "@type": "SoftwareApplication",
                   "name": "AutoRoadmap",
                   "url": "https://autoroadmap.com",
-                  "description": "AI-powered product roadmap generator",
+                  "description": "Turn product ideas into actionable roadmaps in seconds with AI",
                   "applicationCategory": "ProductivityApplication"
                 },
                 {
-                  "@type": "SoftwareApplication", 
+                  "@type": "SoftwareApplication",
                   "name": "Rede.io",
                   "url": "https://rede.io",
-                  "description": "AI-powered newsletter agent platform",
+                  "description": "AI-powered newsletter agent platform with intelligent web crawling",
                   "applicationCategory": "CommunicationApplication"
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "Product Makr",
+                  "url": "https://product.makr.io",
+                  "description": "Product building challenge demonstrating rapid development with AI tools",
+                  "about": "AI-powered product development showcase"
                 }
               ]
             })

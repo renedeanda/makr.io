@@ -5,6 +5,16 @@ import { FaSun, FaMoon, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 const recentProjects = [
   {
+    title: "Product Makr",
+    description: "Master rapid product development with AI tools. A comprehensive showcase and learning platform for building products faster than ever.",
+    link: "https://product.makr.io",
+    challengeLink: "https://product.makr.io/challenge",
+    githubLink: null,
+    emoji: "🚀",
+    madeWith: ["v0", "Bolt.new", "Claude Code"],
+    isProductMakr: true
+  },
+  {
     title: "Good Dad",
     description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
     link: "https://gooddad.makr.io",
@@ -47,14 +57,6 @@ const recentProjects = [
     emoji: "🔐",
     madeWith: ["Lovable"]
   },
-  {
-    title: "Agent Memory",
-    description: "Learn how AI agents use memory and explore key companies shaping the future of autonomous systems",
-    link: "https://agentmemory.com",
-    githubLink: null,
-    emoji: "🧠",
-    madeWith: ["v0"]
-  },
 ];
 
 const projects = [
@@ -84,9 +86,10 @@ const getBrandChipStyles = (tool) => {
     'OpenAI': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
     'Warp': 'bg-black text-white dark:bg-white dark:text-black',
     'v0': 'bg-black text-white dark:bg-white dark:text-black',
+    'Bolt.new': 'bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold shadow-sm',
     'Lovable': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
   };
-  
+
   return brandColors[tool] || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
 };
 
@@ -118,15 +121,13 @@ const PlatformBadges = ({ platforms }) => (
 
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const totalProjects = 15;
-  const completedProjects = projects.length;
   const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF';
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
       <Head>
-        <title>Make with AI | Recent Projects & 15 Apps Challenge</title>
-        <meta name="description" content="Recent AI-built mobile and web apps and the complete collection of 15 utility web apps made with AI in 30 days" />
+        <title>Make with AI | Product Showcase & AI Development Portfolio</title>
+        <meta name="description" content="Showcase of innovative AI-built products including Good Dad, AutoRoadmap, Rede.io, and Product Makr - demonstrating rapid development with Claude, v0, and modern AI tools" />
         <meta name="theme-color" content={themeColor} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
@@ -166,9 +167,20 @@ export default function Home() {
           {recentProjects.map((project, index) => (
             <div
               key={index}
-              className="block p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-blue-200 dark:border-blue-700 relative"
+              className={`block p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border-2 relative ${
+                project.isProductMakr
+                  ? 'bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 dark:from-amber-900/30 dark:via-orange-900/30 dark:to-red-900/30 border-amber-300 dark:border-amber-600 ring-2 ring-amber-400 dark:ring-amber-500'
+                  : 'bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-700'
+              }`}
             >
-              {project.aiPowered && (
+              {project.isProductMakr && (
+                <div className="absolute -top-2 -right-2">
+                  <span className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                    🏆 CHALLENGE
+                  </span>
+                </div>
+              )}
+              {project.aiPowered && !project.isProductMakr && (
                 <div className="absolute -top-2 -right-2">
                   <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     AI-POWERED
@@ -185,77 +197,47 @@ export default function Home() {
               {project.madeWith && (
                 <MadeWithChips tools={project.madeWith} />
               )}
-              <div className="flex space-x-4 mt-4">
-                <a
-                  href={`${project.link}?utm_source=makr_recent`}
-                  target="_blank"
-                  className="text-blue-600 dark:text-blue-400 hover:underline flex items-center font-medium"
-                >
-                  Visit Site <FaExternalLinkAlt className="ml-1" />
-                </a>
-                {project.githubLink && (
+              {project.isProductMakr ? (
+                <div className="flex flex-col sm:flex-row gap-3 mt-4">
                   <a
-                    href={project.githubLink}
+                    href={`${project.link}?utm_source=makr_showcase`}
+                    target="_blank"
+                    className="flex-1 text-center px-4 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                  >
+                    Explore Product Makr <FaExternalLinkAlt />
+                  </a>
+                  <a
+                    href={`${project.challengeLink}?utm_source=makr_showcase`}
+                    target="_blank"
+                    className="px-4 py-2.5 border-2 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-amber-300 font-semibold rounded-lg hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all duration-200 flex items-center justify-center gap-2"
+                  >
+                    View Challenge
+                  </a>
+                </div>
+              ) : (
+                <div className="flex space-x-4 mt-4">
+                  <a
+                    href={`${project.link}?utm_source=makr_recent`}
                     target="_blank"
                     className="text-blue-600 dark:text-blue-400 hover:underline flex items-center font-medium"
                   >
-                    GitHub <FaGithub className="ml-1" />
+                    Visit Site <FaExternalLinkAlt className="ml-1" />
                   </a>
-                )}
-              </div>
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      className="text-blue-600 dark:text-blue-400 hover:underline flex items-center font-medium"
+                    >
+                      GitHub <FaGithub className="ml-1" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
-
-      {/* Original Header Section */}
-      <div className="flex justify-center items-center p-6">
-        <header className="text-center">
-          <h1 className="text-4xl font-extrabold">15 Web Apps Made with AI in 30 Days</h1>
-          <p className="text-xl mt-4">
-            Crafted with 🧡 + 🤖 by <a href="https://renedeanda.com/?utm_source=makr_15" className="text-amber-500 hover:underline">René DeAnda</a>
-          </p>
-          <p className="text-xl mt-4 font-bold">
-            Status: {completedProjects} / {totalProjects} completed
-          </p>
-        </header>
-      </div>
-
-      {/* Original Projects Grid */}
-      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 lg:px-8 mb-16">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="block p-8 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
-          >
-            <h2 className="text-2xl font-semibold flex items-center">
-              {project.emoji} {project.title}
-            </h2>
-            <p className="text-xl mt-4">{project.description}</p>
-            {project.madeWith && (
-              <MadeWithChips tools={project.madeWith} />
-            )}
-            <div className="flex space-x-4 mt-4">
-              <a
-                href={`${project.link}?utm_source=makr_15`}
-                target="_blank"
-                className="text-primary dark:text-darkText hover:underline flex items-center"
-              >
-                Visit Site <FaExternalLinkAlt className="ml-1" />
-              </a>
-              {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  className="text-primary dark:text-darkText hover:underline flex items-center"
-                >
-                  GitHub <FaGithub className="ml-1" />
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </main>
     </div>
   );
 }
