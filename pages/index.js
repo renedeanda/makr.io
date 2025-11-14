@@ -5,6 +5,16 @@ import { FaSun, FaMoon, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 const recentProjects = [
   {
+    title: "Product Makr",
+    description: "Master rapid product development with AI tools. A comprehensive showcase and learning platform for building products faster than ever.",
+    link: "https://product.makr.io",
+    challengeLink: "https://product.makr.io/challenge",
+    githubLink: null,
+    emoji: "🚀",
+    madeWith: ["v0", "Bolt.new", "Claude Code"],
+    isProductMakr: true
+  },
+  {
     title: "Good Dad",
     description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
     link: "https://gooddad.makr.io",
@@ -47,15 +57,6 @@ const recentProjects = [
     emoji: "🔐",
     madeWith: ["Lovable"]
   },
-  {
-    title: "Product Makr",
-    description: "The ultimate product building challenge - Learn how to ship fast with modern AI tools",
-    link: "https://product.makr.io",
-    githubLink: null,
-    emoji: "🚀",
-    madeWith: ["v0", "Bolt.new", "Claude Code"],
-    isProductMakr: true
-  },
 ];
 
 const projects = [
@@ -85,7 +86,7 @@ const getBrandChipStyles = (tool) => {
     'OpenAI': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
     'Warp': 'bg-black text-white dark:bg-white dark:text-black',
     'v0': 'bg-black text-white dark:bg-white dark:text-black',
-    'Bolt.new': 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold',
+    'Bolt.new': 'bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold shadow-sm',
     'Lovable': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
   };
 
@@ -196,76 +197,45 @@ export default function Home() {
               {project.madeWith && (
                 <MadeWithChips tools={project.madeWith} />
               )}
-              <div className="flex space-x-4 mt-4">
-                <a
-                  href={`${project.link}?utm_source=makr_recent`}
-                  target="_blank"
-                  className="text-blue-600 dark:text-blue-400 hover:underline flex items-center font-medium"
-                >
-                  Visit Site <FaExternalLinkAlt className="ml-1" />
-                </a>
-                {project.githubLink && (
+              {project.isProductMakr ? (
+                <div className="flex flex-col sm:flex-row gap-3 mt-4">
                   <a
-                    href={project.githubLink}
+                    href={`${project.link}?utm_source=makr_showcase`}
+                    target="_blank"
+                    className="flex-1 text-center px-4 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                  >
+                    Explore Product Makr <FaExternalLinkAlt />
+                  </a>
+                  <a
+                    href={`${project.challengeLink}?utm_source=makr_showcase`}
+                    target="_blank"
+                    className="px-4 py-2.5 border-2 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-amber-300 font-semibold rounded-lg hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all duration-200 flex items-center justify-center gap-2"
+                  >
+                    View Challenge
+                  </a>
+                </div>
+              ) : (
+                <div className="flex space-x-4 mt-4">
+                  <a
+                    href={`${project.link}?utm_source=makr_recent`}
                     target="_blank"
                     className="text-blue-600 dark:text-blue-400 hover:underline flex items-center font-medium"
                   >
-                    GitHub <FaGithub className="ml-1" />
+                    Visit Site <FaExternalLinkAlt className="ml-1" />
                   </a>
-                )}
-              </div>
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      className="text-blue-600 dark:text-blue-400 hover:underline flex items-center font-medium"
+                    >
+                      GitHub <FaGithub className="ml-1" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Product Makr Challenge Card */}
-      <div className="py-12 px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto">
-          <a
-            href="https://product.makr.io/challenge?utm_source=makr_showcase"
-            target="_blank"
-            className="block p-8 bg-gradient-to-br from-amber-100 via-orange-100 to-red-100 dark:from-amber-900/40 dark:via-orange-900/40 dark:to-red-900/40 rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 border-4 border-amber-300 dark:border-amber-600 relative overflow-hidden group"
-          >
-            {/* Animated background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 via-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-            <div className="relative">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-5xl">🚀</span>
-                  <h2 className="text-3xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
-                    Product Makr Challenge
-                  </h2>
-                </div>
-                <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                  15 in 30 Days
-                </span>
-              </div>
-
-              <p className="text-xl text-gray-800 dark:text-gray-200 mb-6 leading-relaxed">
-                Discover how I built 15 web applications in 30 days using AI tools like Claude, ChatGPT, and v0.
-                Learn the process, tools, and techniques behind rapid product development.
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-white dark:bg-gray-800 rounded-full text-sm font-medium text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
-                  🎯 15 Apps Built
-                </span>
-                <span className="px-3 py-1 bg-white dark:bg-gray-800 rounded-full text-sm font-medium text-orange-700 dark:text-orange-300 border border-orange-300 dark:border-orange-700">
-                  🤖 AI-Powered
-                </span>
-                <span className="px-3 py-1 bg-white dark:bg-gray-800 rounded-full text-sm font-medium text-red-700 dark:text-red-300 border border-red-300 dark:border-red-700">
-                  ⚡ Rapid Development
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300 font-semibold text-lg">
-                View Full Challenge
-                <FaExternalLinkAlt className="group-hover:translate-x-1 transition-transform duration-300" />
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </div>
