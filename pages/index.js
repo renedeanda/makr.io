@@ -50,9 +50,25 @@ const recentProjects = [
     madeWith: ["Claude", "ChatGPT"]
   },
   {
+    title: "JSON Makr",
+    description: "Professional JSON toolkit with 18+ tools: formatter, validator, converter, schema generator. Privacy-first, all processing in your browser",
+    link: "https://json.makr.io",
+    githubLink: null,
+    emoji: "🔧",
+    madeWith: ["Claude Code"]
+  },
+  {
+    title: "ExtensionList.com",
+    description: "Find browser extensions you can actually trust with honest reviews, trust scores, and controversy alerts. 50+ extensions rated",
+    link: "https://extensionlist.com",
+    githubLink: null,
+    emoji: "🧩",
+    madeWith: ["Claude Code"]
+  },
+  {
     title: "Auth Flow Visualizer",
     description: "Understand authentication flows in 30 seconds with interactive visualizations",
-    link: "https://accountdev.com",
+    link: "https://authvisualizer.makr.io",
     githubLink: "https://github.com/renedeanda/auth-flow-lens",
     emoji: "🔐",
     madeWith: ["Lovable"]
