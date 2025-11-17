@@ -76,6 +76,8 @@ const recentProjects = [
 ];
 
 const projects = [
+  { title: "HTML Makr", description: "15+ free HTML tools. Convert, validate, format, and optimize HTML. No ads, no tracking, privacy-first.", link: "https://html.makr.io", githubLink: null, emoji: "🛠️", madeWith: ["Claude Code"] },
+  { title: "Ship Toolkit (WIP)", description: "AI-Native deployment automation for Claude Code. Ship 10x faster with automated assets, SEO, and performance optimization.", link: "https://ship.makr.io", githubLink: null, emoji: "🚢", madeWith: ["Claude Code"] },
   { title: "SVG to PNG", description: "Convert SVG files to PNG", link: "https://svg2png.makr.io", githubLink: "https://github.com/renedeanda/svg2png.makr.io", emoji: "🖼️", madeWith: ["Claude", "ChatGPT"] },
   { title: "Email Preview", description: "Preview HTML emails", link: "https://emailpreview.makr.io", githubLink: "https://github.com/renedeanda/emailpreview.makr.io", emoji: "📧", madeWith: ["Claude", "ChatGPT"] },
   { title: "RSS Feed Reader", description: "Read top RSS feeds", link: "https://rss.makr.io", githubLink: "https://github.com/renedeanda/rss.makr.io", emoji: "📡", madeWith: ["Claude", "ChatGPT"] },
