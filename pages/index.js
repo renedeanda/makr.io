@@ -142,7 +142,13 @@ export default function Home() {
   const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF';
 
   return (
-    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`}>
+    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`} style={{
+      backgroundImage: theme === 'dark'
+        ? 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.02) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.02) 2%, transparent 0%)'
+        : 'radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.02) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.02) 2%, transparent 0%)',
+      backgroundSize: '100px 100px',
+      backgroundPosition: '0 0, 50px 50px'
+    }}>
       <Head>
         <title>Make with AI | Product Showcase & AI Development Portfolio</title>
         <meta name="description" content="Showcase of innovative AI-built products including Good Dad, AutoRoadmap, Rede.io, and Product Makr - demonstrating rapid development with Claude, v0, and modern AI tools" />
@@ -256,6 +262,86 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* All Projects Section */}
+      <div className="py-8 px-6 lg:px-8 pb-16">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-bold mb-2">🛠️ All Projects</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400">Developer tools and utilities built with AI</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className={`block p-5 rounded-xl shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 border ${
+                theme === 'dark'
+                  ? 'bg-gray-800/50 border-gray-700 hover:border-gray-600'
+                  : 'bg-white border-gray-200 hover:border-gray-300'
+              }`}
+            >
+              <h3 className="text-lg font-semibold flex items-center">
+                {project.emoji} {project.title}
+              </h3>
+              <p className="text-sm mt-2 text-gray-600 dark:text-gray-400">{project.description}</p>
+              {project.madeWith && (
+                <MadeWithChips tools={project.madeWith} />
+              )}
+              <div className="flex space-x-3 mt-3">
+                <a
+                  href={`${project.link}?utm_source=makr_all`}
+                  target="_blank"
+                  className="text-blue-600 dark:text-blue-400 hover:underline flex items-center text-sm font-medium"
+                >
+                  Visit <FaExternalLinkAlt className="ml-1 text-xs" />
+                </a>
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:underline flex items-center text-sm font-medium"
+                  >
+                    GitHub <FaGithub className="ml-1 text-xs" />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className={`mt-auto py-8 px-6 border-t ${
+        theme === 'dark' ? 'bg-gray-800/50 border-gray-700' : 'bg-gray-50 border-gray-200'
+      }`}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center">
+            <p className="text-lg font-semibold mb-2">Built with AI 🤖</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              All projects built using Claude Code, ChatGPT, v0, Bolt.new, and other AI tools
+            </p>
+            <div className="flex justify-center space-x-6 mb-4">
+              <a
+                href="https://github.com/renedeanda"
+                target="_blank"
+                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+              >
+                <FaGithub className="text-2xl" />
+              </a>
+              <a
+                href="https://renedeanda.com"
+                target="_blank"
+                className="text-blue-600 dark:text-blue-400 hover:underline text-sm flex items-center"
+              >
+                by René DeAnda <FaExternalLinkAlt className="ml-1 text-xs" />
+              </a>
+            </div>
+            <p className="text-xs text-gray-500 dark:text-gray-500">
+              © {new Date().getFullYear()} makr.io - All rights reserved
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
