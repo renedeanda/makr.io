@@ -15,6 +15,22 @@ const recentProjects = [
     isProductMakr: true
   },
   {
+    title: "Code Makr",
+    description: "Create beautiful code images, format JSON, convert data, generate UUIDs, and more. Privacy-first developer tools that run entirely in your browser.",
+    link: "https://code.makr.io",
+    githubLink: null,
+    emoji: "💻",
+    madeWith: ["Claude Code"]
+  },
+  {
+    title: "Saigon.me",
+    description: "Explore Saigon's 8 districts with unique personalities, discover 100 authentic experiences, and learn Vietnamese. Your complete guide to the soul of Sài Gòn.",
+    link: "https://saigon.me",
+    githubLink: null,
+    emoji: "🛵",
+    madeWith: ["Claude Code"]
+  },
+  {
     title: "Good Dad",
     description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
     link: "https://gooddad.makr.io",
