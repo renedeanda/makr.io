@@ -30,7 +30,7 @@ const recentProjects = [
     link: "https://grateful.ly",
     githubLink: null,
     emoji: "🧡",
-    madeWith: ["Claude Code"]
+    madeWith: ["Lovable"]
   },
   {
     title: "Code Makr",
