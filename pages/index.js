@@ -15,6 +15,24 @@ const recentProjects = [
     isProductMakr: true
   },
   {
+    title: "Good Dad",
+    description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
+    link: "https://gooddad.makr.io",
+    productHuntLink: "https://www.producthunt.com/products/good-dad",
+    githubLink: null,
+    emoji: "🧘‍♂️",
+    madeWith: ["Warp", "Claude Code"],
+    platforms: ["iOS", "Android"]
+  },
+  {
+    title: "Grateful.ly",
+    description: "Practice gratitude daily and build a positive mindset. Simple prompts to help you reflect and appreciate life's moments.",
+    link: "https://grateful.ly",
+    githubLink: null,
+    emoji: "🧡",
+    madeWith: ["Claude Code"]
+  },
+  {
     title: "Code Makr",
     description: "Create beautiful code images, format JSON, convert data, generate UUIDs, and more. Privacy-first developer tools that run entirely in your browser.",
     link: "https://code.makr.io",
@@ -29,15 +47,6 @@ const recentProjects = [
     githubLink: null,
     emoji: "🛵",
     madeWith: ["Claude Code"]
-  },
-  {
-    title: "Good Dad",
-    description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
-    link: "https://gooddad.makr.io",
-    githubLink: null,
-    emoji: "🧘‍♂️",
-    madeWith: ["Warp", "Claude Code"],
-    platforms: ["iOS", "Android"]
   },
   {
     title: "AutoRoadmap",
@@ -277,7 +286,7 @@ export default function Home() {
                   </a>
                 </div>
               ) : (
-                <div className="flex space-x-4 mt-4">
+                <div className="flex flex-wrap gap-3 mt-4">
                   <a
                     href={`${project.link}?utm_source=makr_recent`}
                     target="_blank"
@@ -285,6 +294,15 @@ export default function Home() {
                   >
                     Visit Site <FaExternalLinkAlt className="ml-1" />
                   </a>
+                  {project.productHuntLink && (
+                    <a
+                      href={project.productHuntLink}
+                      target="_blank"
+                      className="text-orange-600 dark:text-orange-400 hover:underline flex items-center font-medium"
+                    >
+                      Product Hunt <FaExternalLinkAlt className="ml-1" />
+                    </a>
+                  )}
                   {project.githubLink && (
                     <a
                       href={project.githubLink}
