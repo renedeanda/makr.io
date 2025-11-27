@@ -17,7 +17,7 @@ const recentProjects = [
   {
     title: "Good Dad",
     description: "Daily mindful reminders to help you connect, grow, and thrive as a father. Simple. Gentle. Transformative.",
-    link: "https://gooddad.makr.io",
+    link: "https://gooddad.app",
     productHuntLink: "https://www.producthunt.com/products/good-dad",
     githubLink: null,
     emoji: "🧘‍♂️",
