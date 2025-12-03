@@ -33,6 +33,14 @@ const recentProjects = [
     madeWith: ["Lovable"]
   },
   {
+    title: "ev.makr.io",
+    description: "A comprehensive, beginner-friendly educational resource for new and prospective electric vehicle owners in the United States. Learn about charging, vehicles, and EV ownership.",
+    link: "https://ev.makr.io",
+    githubLink: "https://github.com/renedeanda/ev.makr.io",
+    emoji: "⚡",
+    madeWith: ["Claude Code"]
+  },
+  {
     title: "Code Makr",
     description: "Create beautiful code images, format JSON, convert data, generate UUIDs, and more. Privacy-first developer tools that run entirely in your browser.",
     link: "https://code.makr.io",
