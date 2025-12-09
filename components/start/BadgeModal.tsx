@@ -39,19 +39,22 @@ export default function BadgeModal({ isOpen, onClose }: BadgeModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className={cn(
-              'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50',
-              'w-full max-w-2xl mx-4 rounded-xl shadow-2xl p-6 max-h-[90vh] overflow-y-auto',
+              'fixed z-50',
+              'top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2',
+              'w-[calc(100%-2rem)] max-w-2xl',
+              'max-h-[85vh] overflow-y-auto',
+              'rounded-xl shadow-2xl p-4 sm:p-6',
               theme === 'dark'
                 ? 'bg-gray-900 border border-gray-700'
                 : 'bg-white border border-gray-200'
             )}
           >
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <FaTrophy className="h-6 w-6 text-yellow-500" />
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <FaTrophy className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500" />
                 <div>
-                  <h2 className="text-2xl font-bold">Your Badges</h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <h2 className="text-xl sm:text-2xl font-bold">Your Badges</h2>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     {unlockedCount} of {allBadges.length} unlocked
                   </p>
                 </div>

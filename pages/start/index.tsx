@@ -104,12 +104,12 @@ export default function StartPage() {
       {/* The Workflow */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">The 8 Steps</h2>
-        <div className="space-y-6">
+        <div className="space-y-8">
           {STEPS.map((step, index) => (
             <Link key={step.id} href={step.path}>
               <div
                 className={cn(
-                  'flex items-start gap-5 rounded-lg border p-5 transition-all cursor-pointer group',
+                  'flex items-start gap-5 rounded-lg border p-6 transition-all cursor-pointer group',
                   theme === 'dark'
                     ? 'border-gray-800 hover:border-gray-700 hover:bg-gray-900/30'
                     : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
