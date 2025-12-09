@@ -53,9 +53,9 @@ export default function StartPage() {
               : 'border-gray-200 bg-gray-50'
           )}
         >
-          <div className="text-2xl font-bold mb-1">~$10</div>
+          <div className="text-2xl font-bold mb-1">$30/mo</div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Total cost (just the domain)
+            $10 domain + $20 Claude Pro
           </p>
         </div>
 
@@ -187,12 +187,12 @@ export default function StartPage() {
       {/* CTA */}
       <div className="pt-8">
         <Link href="/start/step-0">
-          <button className="w-full rounded-lg bg-black dark:bg-white text-white dark:text-black px-8 py-4 text-base font-semibold hover:opacity-90 transition-opacity">
+          <button className="w-full rounded-md bg-black dark:bg-white text-white dark:text-black px-5 py-3 text-sm font-medium hover:opacity-80 transition-opacity">
             {hasStarted ? 'Continue Your Journey →' : 'Start Your Journey →'}
           </button>
         </Link>
-        <p className="mt-4 text-sm text-center text-gray-500 dark:text-gray-500">
-          Free to follow • Takes 2-5 hours • Just $10 for the domain
+        <p className="mt-3 text-sm text-center text-gray-500 dark:text-gray-500">
+          Recommended: $10 domain + $20/mo Claude Pro
         </p>
       </div>
     </StartLayout>

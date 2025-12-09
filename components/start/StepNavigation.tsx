@@ -50,7 +50,7 @@ export default function StepNavigation({
         <Link href={nextHref}>
           <button
             onClick={onComplete}
-            className="flex items-center gap-2 rounded-lg bg-black dark:bg-white text-white dark:text-black px-6 py-3 font-semibold hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2 rounded-md bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:opacity-80 transition-opacity"
           >
             {nextLabel}
             <FaArrowRight className="h-4 w-4" />

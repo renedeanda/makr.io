@@ -190,13 +190,7 @@ export default function Home() {
   const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF';
 
   return (
-    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-white text-gray-900'}`} style={{
-      backgroundImage: theme === 'dark'
-        ? 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.02) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.02) 2%, transparent 0%)'
-        : 'radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.02) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.02) 2%, transparent 0%)',
-      backgroundSize: '100px 100px',
-      backgroundPosition: '0 0, 50px 50px'
-    }}>
+    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-900'}`}>
       <Head>
         <title>Make with AI | Product Showcase & AI Development Portfolio</title>
         <meta name="description" content="Showcase of innovative AI-built products including Good Dad, AutoRoadmap, Rede.io, and Product Makr - demonstrating rapid development with Claude, v0, and modern AI tools" />
