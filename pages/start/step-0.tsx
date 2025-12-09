@@ -252,13 +252,13 @@ export default function Step0() {
         {/* AI Assistant */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-purple-500">
-              <FaRobot className="h-7 w-7 text-white" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black dark:bg-white">
+              <FaRobot className="h-7 w-7 text-white dark:text-black" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold">4. AI Assistant</h2>
+              <h2 className="text-2xl font-bold">4. Claude Pro</h2>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Claude or ChatGPT
+                Your AI coding assistant
               </p>
             </div>
           </div>
@@ -271,55 +271,72 @@ export default function Step0() {
                 : 'border-gray-200 bg-gray-50'
             )}
           >
-            <h3 className="font-semibold mb-2">What are these?</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Large language models that can write code, debug, explain technical concepts, and iterate on designs. You describe what you want in natural language, they generate the code.
+            <h3 className="font-semibold mb-3">Recommended: Claude Pro ($20/month)</h3>
+            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+              Claude Code is my preferred way to build. It's powerful, understands context deeply, and generates production-quality code. The Pro subscription gives you unlimited usage—essential when you're iterating on designs or debugging.
             </p>
 
-            <h3 className="font-semibold mb-2">Which one?</h3>
-
-            <div className="space-y-4 mb-4">
-              <div className="border-l-4 border-orange-500 pl-4">
-                <h4 className="font-semibold text-orange-600 dark:text-orange-400">Claude.ai (Recommended)</h4>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                  <li>✓ Better at understanding complex instructions</li>
-                  <li>✓ Clearer explanations when teaching</li>
-                  <li>✓ Good free tier (enough for 2-3 apps)</li>
-                  <li>✓ $20/month for unlimited (Claude Pro)</li>
-                </ul>
+            <div className="space-y-3 mb-6">
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-gray-100 mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Unlimited messages with Claude Sonnet</p>
               </div>
-
-              <div className="border-l-4 border-green-500 pl-4">
-                <h4 className="font-semibold text-green-600 dark:text-green-400">ChatGPT (Also great)</h4>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                  <li>✓ More widely known</li>
-                  <li>✓ Similar capabilities</li>
-                  <li>✓ Free tier works</li>
-                  <li>✓ $20/month for GPT-4 access</li>
-                </ul>
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-gray-100 mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Priority access during peak times</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-gray-100 mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Early access to new features</p>
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <a
-                href="https://claude.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
-              >
-                <FaRobot />
-                Try Claude
-              </a>
-              <a
-                href="https://chat.openai.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
-              >
-                <FaRobot />
-                Try ChatGPT
-              </a>
+            <div
+              className={cn(
+                'rounded-lg border p-4 mb-4',
+                theme === 'dark'
+                  ? 'border-gray-700 bg-gray-800/80'
+                  : 'border-gray-200 bg-white'
+              )}
+            >
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                <strong>Can you use the free tier?</strong>
+              </p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                Yes—the free tier works for building 1-2 simple apps. But you'll hit rate limits quickly when iterating. For this guide, I'm assuming you have Pro.
+              </p>
             </div>
+
+            <a
+              href="https://claude.ai/upgrade"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 underline"
+            >
+              Get Claude Pro →
+            </a>
+          </div>
+
+          <div
+            className={cn(
+              'rounded-xl border p-6',
+              theme === 'dark'
+                ? 'border-gray-700 bg-gray-800/50'
+                : 'border-gray-200 bg-gray-50'
+            )}
+          >
+            <h3 className="font-semibold mb-3">Alternative: ChatGPT Plus ($20/month)</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
+              ChatGPT Plus also works well for building apps. Similar pricing, similar capabilities. Use whichever you prefer—the workflow is the same.
+            </p>
+            <a
+              href="https://chat.openai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 underline"
+            >
+              Try ChatGPT →
+            </a>
           </div>
         </section>
 
