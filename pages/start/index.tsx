@@ -20,31 +20,26 @@ export default function StartPage() {
       description="Learn to ship your first web app using AI tools in just a few hours"
     >
       {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+      <div className="mb-16">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
           Ship Your First Web App
-          <br />
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Using AI Tools
-          </span>
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
           An interactive, step-by-step guide that teaches you to ship a real web app—from idea to production—using AI coding tools. No technical experience required.
         </p>
       </div>
 
       {/* Key Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
         <div
           className={cn(
-            'rounded-xl border p-6 text-center',
+            'rounded-lg border p-6',
             theme === 'dark'
-              ? 'border-gray-700 bg-gray-800/50'
-              : 'border-gray-200 bg-white'
+              ? 'border-gray-800 bg-gray-900/50'
+              : 'border-gray-200 bg-gray-50'
           )}
         >
-          <FaClock className="h-8 w-8 mx-auto mb-3 text-blue-500" />
-          <h3 className="text-3xl font-bold mb-1">2-5 hours</h3>
+          <div className="text-2xl font-bold mb-1">2-5 hours</div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Total active time
           </p>
@@ -52,14 +47,13 @@ export default function StartPage() {
 
         <div
           className={cn(
-            'rounded-xl border p-6 text-center',
+            'rounded-lg border p-6',
             theme === 'dark'
-              ? 'border-gray-700 bg-gray-800/50'
-              : 'border-gray-200 bg-white'
+              ? 'border-gray-800 bg-gray-900/50'
+              : 'border-gray-200 bg-gray-50'
           )}
         >
-          <FaDollarSign className="h-8 w-8 mx-auto mb-3 text-green-500" />
-          <h3 className="text-3xl font-bold mb-1">~$10</h3>
+          <div className="text-2xl font-bold mb-1">~$10</div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Total cost (just the domain)
           </p>
@@ -67,14 +61,13 @@ export default function StartPage() {
 
         <div
           className={cn(
-            'rounded-xl border p-6 text-center',
+            'rounded-lg border p-6',
             theme === 'dark'
-              ? 'border-gray-700 bg-gray-800/50'
-              : 'border-gray-200 bg-white'
+              ? 'border-gray-800 bg-gray-900/50'
+              : 'border-gray-200 bg-gray-50'
           )}
         >
-          <FaRocket className="h-8 w-8 mx-auto mb-3 text-purple-500" />
-          <h3 className="text-3xl font-bold mb-1">8 steps</h3>
+          <div className="text-2xl font-bold mb-1">8 steps</div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             From idea to live app
           </p>
@@ -109,31 +102,31 @@ export default function StartPage() {
       </div>
 
       {/* The Workflow */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">The Workflow (8 Steps)</h2>
-        <div className="space-y-3">
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-8">The 8 Steps</h2>
+        <div className="space-y-4">
           {STEPS.map((step, index) => (
             <Link key={step.id} href={step.path}>
               <div
                 className={cn(
-                  'flex items-center gap-4 rounded-xl border p-4 transition-all cursor-pointer group',
+                  'flex items-start gap-5 rounded-lg border p-5 transition-all cursor-pointer group',
                   theme === 'dark'
-                    ? 'border-gray-700 bg-gray-800/30 hover:bg-gray-800/60 hover:border-gray-600'
-                    : 'border-gray-200 bg-white hover:bg-gray-50 hover:border-gray-300'
+                    ? 'border-gray-800 hover:border-gray-700 hover:bg-gray-900/30'
+                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                 )}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white font-bold flex-shrink-0">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold text-sm flex-shrink-0 mt-1">
                   {step.number}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-lg group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-semibold text-lg mb-1.5">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 flex-shrink-0">
+                <div className="text-xs text-gray-500 dark:text-gray-500 flex-shrink-0 mt-1 font-mono">
                   {step.estimatedTime}
                 </div>
               </div>
@@ -192,14 +185,14 @@ export default function StartPage() {
       )}
 
       {/* CTA */}
-      <div className="text-center pt-8">
+      <div className="pt-8">
         <Link href="/start/step-0">
-          <button className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-semibold text-white hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
-            {hasStarted ? 'Continue Your Journey' : 'Start Your Journey'}
+          <button className="w-full rounded-lg bg-black dark:bg-white text-white dark:text-black px-8 py-4 text-base font-semibold hover:opacity-90 transition-opacity">
+            {hasStarted ? 'Continue Your Journey →' : 'Start Your Journey →'}
           </button>
         </Link>
-        <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-          Join thousands of makers who've shipped their first app
+        <p className="mt-4 text-sm text-center text-gray-500 dark:text-gray-500">
+          Free to follow • Takes 2-5 hours • Just $10 for the domain
         </p>
       </div>
     </StartLayout>

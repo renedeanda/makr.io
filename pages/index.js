@@ -204,29 +204,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      {/* Themed Banner with GitHub Icon and Theme Button */}
-      <div className={`py-2 text-center flex justify-between items-center px-4 ${theme === 'dark' ? 'bg-gray-700 text-gray-200' : 'bg-gray-100 text-gray-900'}`}>
-        <div className="font-bold">
-          Building the future with AI 🤖✨
+      {/* Clean Navigation */}
+      <nav className={`border-b ${theme === 'dark' ? 'border-gray-800 bg-darkBackground' : 'border-gray-200 bg-white'}`}>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-8">
+            <a href="/" className="text-xl font-semibold hover:opacity-70 transition-opacity">
+              makr.io
+            </a>
+            <a
+              href="/start"
+              className={`text-sm font-medium transition-colors ${theme === 'dark' ? 'text-gray-400 hover:text-gray-200' : 'text-gray-600 hover:text-gray-900'}`}
+            >
+              Ship Your First App
+            </a>
+          </div>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/renedeanda/makr.io"
+              target="_blank"
+              className={`p-2 rounded-lg transition-all ${theme === 'dark' ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+              aria-label="GitHub Repository"
+            >
+              <FaGithub className="text-xl" />
+            </a>
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-all ${theme === 'dark' ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+              aria-label="Toggle Dark Mode"
+            >
+              {theme === 'dark' ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
+            </button>
+          </div>
         </div>
-        <div className="flex items-center space-x-2">
-          <a
-            href="https://github.com/renedeanda/makr.io"
-            target="_blank"
-            className={`p-2 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-gray-600 hover:bg-gray-500' : 'bg-gray-200 hover:bg-gray-300'}`}
-            aria-label="GitHub Repository"
-          >
-            <FaGithub className="text-xl" />
-          </a>
-          <button
-            onClick={toggleTheme}
-            className={`p-2 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-gray-600 border-gray-500' : 'bg-gray-200 border-gray-300'}`}
-            aria-label="Toggle Dark Mode"
-          >
-            {theme === 'dark' ? <FaSun className="text-yellow-500" /> : <FaMoon className="text-blue-500" />}
-          </button>
-        </div>
-      </div>
+      </nav>
 
       {/* Recent Projects Section */}
       <div className="py-8 px-6 lg:px-8">

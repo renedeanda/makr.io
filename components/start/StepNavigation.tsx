@@ -24,18 +24,18 @@ export default function StepNavigation({
   return (
     <div
       className={cn(
-        'flex items-center justify-between border-t pt-8 mt-12',
-        theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
+        'flex items-center justify-between border-t pt-12 mt-20',
+        theme === 'dark' ? 'border-gray-800' : 'border-gray-200'
       )}
     >
       {prevHref ? (
         <Link href={prevHref}>
           <button
             className={cn(
-              'flex items-center gap-2 text-sm transition-colors',
+              'flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70',
               theme === 'dark'
-                ? 'text-gray-400 hover:text-gray-200'
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'text-gray-400'
+                : 'text-gray-600'
             )}
           >
             <FaArrowLeft className="h-3 w-3" />
@@ -50,7 +50,7 @@ export default function StepNavigation({
         <Link href={nextHref}>
           <button
             onClick={onComplete}
-            className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 rounded-lg bg-black dark:bg-white text-white dark:text-black px-6 py-3 font-semibold hover:opacity-90 transition-opacity"
           >
             {nextLabel}
             <FaArrowRight className="h-4 w-4" />
@@ -59,7 +59,7 @@ export default function StepNavigation({
       ) : onComplete ? (
         <button
           onClick={onComplete}
-          className="flex items-center gap-2 rounded-lg bg-green-600 px-6 py-3 font-medium text-white hover:bg-green-700 transition-colors"
+          className="flex items-center gap-2 rounded-lg bg-black dark:bg-white text-white dark:text-black px-6 py-3 font-semibold hover:opacity-90 transition-opacity"
         >
           Complete
           <FaCheck className="h-4 w-4" />
