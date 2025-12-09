@@ -208,12 +208,12 @@ export default function Step0() {
           >
             <h3 className="font-semibold mb-2">What is Cloudflare?</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Domain registrar, DNS provider, CDN, and security platform. Unlike traditional registrars (GoDaddy, Namecheap), Cloudflare sells domains at cost with no markup.
+              Domain registrar, DNS provider, CDN, and security platform. Cloudflare sells domains at cost with no markup, and has the best DNS infrastructure globally.
             </p>
 
-            <h3 className="font-semibold mb-2">Why Cloudflare over GoDaddy?</h3>
+            <h3 className="font-semibold mb-2">Why Cloudflare?</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
-              <li>• <strong>Price:</strong> $9/year for .io (vs $15-20 on GoDaddy)</li>
+              <li>• <strong>Price:</strong> At-cost pricing (~$15/year for .com)</li>
               <li>• <strong>No upsells:</strong> They don't try to sell you unnecessary add-ons</li>
               <li>• <strong>Best DNS:</strong> Fastest DNS network globally (1.1.1.1)</li>
               <li>• <strong>Vercel integration:</strong> One-click DNS configuration</li>

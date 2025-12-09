@@ -1,10 +1,11 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode, useContext, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ThemeContext } from '../../context/ThemeContext';
 import { cn } from '../../lib/utils';
 import ProgressTracker from './ProgressTracker';
-import { FaSun, FaMoon, FaHome } from 'react-icons/fa';
+import BadgeModal from './BadgeModal';
+import { FaSun, FaMoon, FaHome, FaTrophy } from 'react-icons/fa';
 
 interface StartLayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ interface StartLayoutProps {
 
 export default function StartLayout({ children, title, description }: StartLayoutProps) {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const [showBadgeModal, setShowBadgeModal] = useState(false);
   const pageTitle = title ? `${title} - makr.io/start` : 'Ship Your First App - makr.io/start';
 
   return (
@@ -41,25 +43,41 @@ export default function StartLayout({ children, title, description }: StartLayou
               </Link>
             </div>
 
-            <button
-              onClick={toggleTheme}
-              className={cn(
-                'p-2 rounded-lg transition-all',
-                theme === 'dark'
-                  ? 'hover:bg-gray-800'
-                  : 'hover:bg-gray-100'
-              )}
-              aria-label="Toggle Dark Mode"
-            >
-              {theme === 'dark' ? (
-                <FaSun className="h-5 w-5" />
-              ) : (
-                <FaMoon className="h-5 w-5" />
-              )}
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowBadgeModal(true)}
+                className={cn(
+                  'p-2 rounded-lg transition-all',
+                  theme === 'dark'
+                    ? 'hover:bg-gray-800'
+                    : 'hover:bg-gray-100'
+                )}
+                aria-label="View Badges"
+              >
+                <FaTrophy className="h-5 w-5 text-yellow-500" />
+              </button>
+              <button
+                onClick={toggleTheme}
+                className={cn(
+                  'p-2 rounded-lg transition-all',
+                  theme === 'dark'
+                    ? 'hover:bg-gray-800'
+                    : 'hover:bg-gray-100'
+                )}
+                aria-label="Toggle Dark Mode"
+              >
+                {theme === 'dark' ? (
+                  <FaSun className="h-5 w-5" />
+                ) : (
+                  <FaMoon className="h-5 w-5" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
+
+      <BadgeModal isOpen={showBadgeModal} onClose={() => setShowBadgeModal(false)} />
 
       {/* Main Content */}
       <div className="mx-auto max-w-5xl px-6 py-16">

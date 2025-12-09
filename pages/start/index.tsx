@@ -53,9 +53,9 @@ export default function StartPage() {
               : 'border-gray-200 bg-gray-50'
           )}
         >
-          <div className="text-2xl font-bold mb-1">$30/mo</div>
+          <div className="text-2xl font-bold mb-1">~$35/mo</div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            $10 domain + $20 Claude Pro
+            $15 .com domain + $20 Claude Pro
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function StartPage() {
       {/* The Workflow */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">The 8 Steps</h2>
-        <div className="space-y-4">
+        <div className="space-y-6">
           {STEPS.map((step, index) => (
             <Link key={step.id} href={step.path}>
               <div
@@ -192,7 +192,7 @@ export default function StartPage() {
           </button>
         </Link>
         <p className="mt-3 text-sm text-center text-gray-500 dark:text-gray-500">
-          Recommended: $10 domain + $20/mo Claude Pro
+          Recommended: $15 .com domain + $20/mo Claude Pro
         </p>
       </div>
     </StartLayout>

@@ -6,7 +6,7 @@ import StartLayout from '../../components/start/StartLayout';
 import StepNavigation from '../../components/start/StepNavigation';
 import BadgeDisplay from '../../components/start/BadgeDisplay';
 import CodeBlock from '../../components/start/CodeBlock';
-import { FaTwitter, FaLinkedin, FaShare, FaRocket } from 'react-icons/fa';
+import { FaLinkedin, FaShare, FaRocket, FaCloud } from 'react-icons/fa';
 
 export default function Step7() {
   const { theme } = useContext(ThemeContext);
@@ -27,7 +27,7 @@ export default function Step7() {
   const appName = currentProject?.name || 'Your App';
   const appUrl = currentProject?.customDomain || currentProject?.vercelUrl || 'yourdomain.io';
 
-  const twitterPost = `Just shipped my first AI-built app! 🚀\n\nBuilt ${appName} in ${formatDuration(buildTime)} using AI tools\nLive at: ${appUrl}\n\nFollowing makr.io/start\n\n#buildinpublic #indiehacker #ai`;
+  const blueskyPost = `Just shipped my first AI-built app! 🚀\n\nBuilt ${appName} in ${formatDuration(buildTime)} using AI tools\nLive at: ${appUrl}\n\nFollowing makr.io/start`;
 
   const linkedinPost = `Excited to share my first web app! 🎉\n\nI just built and deployed ${appName} using AI coding tools in ${formatDuration(buildTime)}. The barrier to building software has never been lower.\n\nCheck it out: ${appUrl}\n\nBuilt following makr.io/start guide\n\n#webdevelopment #ai #buildinpublic`;
 
@@ -102,7 +102,7 @@ export default function Step7() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Twitter */}
+            {/* Bluesky */}
             <div
               className={cn(
                 'rounded-xl border p-6',
@@ -110,18 +110,18 @@ export default function Step7() {
               )}
             >
               <div className="flex items-center gap-3 mb-4">
-                <FaTwitter className="h-6 w-6 text-blue-400" />
-                <h3 className="font-semibold text-lg">Twitter</h3>
+                <FaCloud className="h-6 w-6 text-blue-500" />
+                <h3 className="font-semibold text-lg">Bluesky</h3>
               </div>
-              <CodeBlock code={twitterPost} />
+              <CodeBlock code={blueskyPost} />
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterPost)}`}
+                href={`https://bsky.app/intent/compose?text=${encodeURIComponent(blueskyPost)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors mt-2"
               >
-                <FaTwitter />
-                Tweet Now
+                <FaCloud />
+                Post on Bluesky
               </a>
             </div>
 

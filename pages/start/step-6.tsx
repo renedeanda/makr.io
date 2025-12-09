@@ -9,7 +9,7 @@ import { SiCloudflare, SiVercel } from 'react-icons/si';
 import { FaGlobe } from 'react-icons/fa';
 
 const checklistItems: ChecklistItem[] = [
-  { id: 'purchased', label: 'Domain purchased on Cloudflare (~$10)' },
+  { id: 'purchased', label: 'Domain purchased on Cloudflare (~$15)' },
   { id: 'connected', label: 'Domain connected to Vercel' },
   { id: 'propagated', label: 'DNS propagated (domain loads)' },
   { id: 'ssl', label: 'SSL certificate active (padlock shows)' },
@@ -56,7 +56,7 @@ export default function Step6() {
             <strong>Right now:</strong> your-app.vercel.app (random generated URL)
           </p>
           <p className="text-sm text-purple-900 dark:text-purple-300">
-            <strong>After this step:</strong> yourapp.io (professional custom domain!)
+            <strong>After this step:</strong> yourapp.com (professional custom domain!)
           </p>
         </section>
 
@@ -74,35 +74,6 @@ export default function Step6() {
                 theme === 'dark' ? 'border-gray-700 bg-gray-800/50' : 'border-gray-200 bg-gray-50'
               )}
             >
-              <h3 className="font-semibold mb-3">Why Cloudflare instead of GoDaddy?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">GoDaddy:</h4>
-                  <ul className="space-y-1 text-gray-600 dark:text-gray-400">
-                    <li>• .io domain: $20/year (marked up)</li>
-                    <li>• Tries to upsell you hosting, email, etc</li>
-                    <li>• Complicated dashboard</li>
-                    <li>• Renewal reminders spam</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Cloudflare:</h4>
-                  <ul className="space-y-1 text-gray-600 dark:text-gray-400">
-                    <li>• .io domain: $9/year (at cost)</li>
-                    <li>• No upsells</li>
-                    <li>• Clean dashboard</li>
-                    <li>• Easy Vercel integration</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className={cn(
-                'rounded-xl border p-6',
-                theme === 'dark' ? 'border-gray-700 bg-gray-800/50' : 'border-gray-200 bg-gray-50'
-              )}
-            >
               <h3 className="font-semibold mb-3">Search for your domain</h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
                 Visit cloudflare.com/products/registrar and search for your domain idea.
@@ -113,7 +84,7 @@ export default function Step6() {
                 <ul className="space-y-1 text-sm text-blue-900 dark:text-blue-300">
                   <li>• Keep it SHORT (easier to remember and type)</li>
                   <li>• Make it CLEAR what your app does</li>
-                  <li>• .io is popular for tools/utilities (~$9/year)</li>
+                  <li>• .com is most affordable (~$15/year)</li>
                   <li>• Avoid hyphens if possible</li>
                 </ul>
               </div>
@@ -137,7 +108,7 @@ export default function Step6() {
             >
               <h3 className="font-semibold mb-3">Purchase (the only cost!)</h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-                Add to cart and complete purchase. Should be ~$9-10 for .io
+                Add to cart and complete purchase. Should be ~$15 for .com
               </p>
               <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
                 <p className="text-sm text-yellow-900 dark:text-yellow-300">
@@ -167,7 +138,7 @@ export default function Step6() {
                 <li>• Go to your project in Vercel</li>
                 <li>• Click "Settings" → "Domains"</li>
                 <li>• Click "Add Domain"</li>
-                <li>• Type your domain: yourdomain.io</li>
+                <li>• Type your domain: yourdomain.com</li>
                 <li>• Click "Add"</li>
               </ul>
             </div>
@@ -200,7 +171,7 @@ export default function Step6() {
                 It takes 5-30 minutes for DNS to propagate worldwide. Grab a coffee ☕
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Then visit https://yourdomain.io and your app should load!
+                Then visit https://yourdomain.com and your app should load!
               </p>
             </div>
           </div>
@@ -228,7 +199,7 @@ export default function Step6() {
             <li>✓ Professional setup</li>
           </ul>
           <p className="mt-4 font-semibold text-gray-900 dark:text-gray-100">
-            All in one afternoon. For $10. Welcome to the new era of building. 🚀
+            All in one afternoon. For $15. Welcome to the new era of building. 🚀
           </p>
         </section>
 

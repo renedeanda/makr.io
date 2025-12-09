@@ -9,28 +9,85 @@ import { FaLightbulb, FaRobot } from 'react-icons/fa';
 
 const starterPrompts = [
   {
-    title: 'For AI with Memory',
-    prompt: `Based on what you know about me, suggest some helpful utility web apps I can build & deploy with AI tools. Focus on simple, useful tools that solve real problems and can be completed in 2-4 hours.`,
+    title: 'Creative Prompt',
+    prompt: `I want to build my first web app using AI coding tools. Suggest 5 simple but useful app ideas I can complete in 2-4 hours. Focus on tools that:
+
+- Solve everyday problems people actually face
+- Work entirely in the browser (no backend needed)
+- Are delightful to use and shareable
+- Can be built with React/Next.js and existing libraries
+
+Think beyond typical developer tools. Consider productivity, wellness, creativity, decision-making, or fun utilities.`,
   },
   {
-    title: 'For AI without Memory',
-    prompt: `I want to build a simple utility web app using AI coding tools that I can complete in 2-4 hours. Suggest 5 ideas for tools that:
-- Solve a real everyday problem
-- Can be built purely in the browser (no backend)
-- Don't require complex infrastructure
-- Use existing JavaScript libraries
+    title: 'Practical Prompt',
+    prompt: `Suggest web app ideas for my first project that:
+1. Solve a specific pain point (not general productivity)
+2. Take 2-4 hours to build with AI assistance
+3. Don't need databases or user accounts
+4. People would actually bookmark and use daily
 
-Examples: QR generator, color palette tool, PDF merger`,
+Examples: habit tracker, recipe scaler, time zone planner, reading timer`,
   },
 ];
 
 const starterIdeas = [
-  { name: 'QR Code Generator', difficulty: 'Easy', time: '1-2 hrs', library: 'qrcode.js' },
-  { name: 'PDF Merger', difficulty: 'Medium', time: '3-4 hrs', library: 'pdf-lib.js' },
-  { name: 'Chart Maker', difficulty: 'Medium', time: '3-4 hrs', library: 'Chart.js' },
-  { name: 'Color Palette Tool', difficulty: 'Easy', time: '1-2 hrs', library: 'tinycolor' },
-  { name: 'Markdown Editor', difficulty: 'Easy', time: '2-3 hrs', library: 'marked.js' },
-  { name: 'JSON Formatter', difficulty: 'Easy', time: '1-2 hrs', library: 'none' },
+  {
+    name: 'Daily Gratitude Journal',
+    difficulty: 'Easy',
+    time: '2-3 hrs',
+    description: 'Simple journaling with local storage',
+    icon: '📝'
+  },
+  {
+    name: 'Habit Streak Tracker',
+    difficulty: 'Easy',
+    time: '2-3 hrs',
+    description: 'Track daily habits with visual streaks',
+    icon: '✅'
+  },
+  {
+    name: 'Reading Timer',
+    difficulty: 'Easy',
+    time: '1-2 hrs',
+    description: 'Pomodoro-style reading sessions',
+    icon: '⏱️'
+  },
+  {
+    name: 'Recipe Converter',
+    difficulty: 'Easy',
+    time: '2-3 hrs',
+    description: 'Scale recipes & convert measurements',
+    icon: '🍳'
+  },
+  {
+    name: 'Decision Helper',
+    difficulty: 'Easy',
+    time: '1-2 hrs',
+    description: 'Pros/cons list with weighted scoring',
+    icon: '🤔'
+  },
+  {
+    name: 'Focus Timer',
+    difficulty: 'Easy',
+    time: '2-3 hrs',
+    description: 'Beautiful Pomodoro with ambient sounds',
+    icon: '🎯'
+  },
+  {
+    name: 'Link Collection',
+    difficulty: 'Medium',
+    time: '3-4 hrs',
+    description: 'Save & organize links with tags',
+    icon: '🔖'
+  },
+  {
+    name: 'Quick Poll Creator',
+    difficulty: 'Medium',
+    time: '3-4 hrs',
+    description: 'Create shareable polls (no backend)',
+    icon: '📊'
+  },
 ];
 
 export default function Step1() {
@@ -66,10 +123,10 @@ export default function Step1() {
           <span>~5 minutes</span>
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-4">
-          Generate Your Idea
+          Pick Your First App Idea
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400">
-          Use your favorite AI tool to generate app ideas that solve real problems!
+          Choose something simple, useful, and exciting to build. You can always build more later!
         </p>
       </header>
 
@@ -110,11 +167,21 @@ export default function Step1() {
                   theme === 'dark'
                     ? 'border-gray-700 bg-gray-800/50 hover:bg-gray-800'
                     : 'border-gray-200 bg-white hover:bg-gray-50',
-                  'transition-colors cursor-pointer'
+                  'transition-colors cursor-pointer group'
                 )}
                 onClick={() => setProjectName(idea.name)}
               >
-                <h3 className="font-semibold text-lg mb-2">{idea.name}</h3>
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="text-3xl">{idea.icon}</span>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      {idea.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                      {idea.description}
+                    </p>
+                  </div>
+                </div>
                 <div className="flex flex-wrap gap-2 text-xs">
                   <span className="px-2 py-1 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
                     {idea.difficulty}
@@ -122,11 +189,6 @@ export default function Step1() {
                   <span className="px-2 py-1 rounded bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
                     {idea.time}
                   </span>
-                  {idea.library !== 'none' && (
-                    <span className="px-2 py-1 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300">
-                      {idea.library}
-                    </span>
-                  )}
                 </div>
               </div>
             ))}
