@@ -11,13 +11,11 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fa;
-  color: #333;
 }
 
-body.dark {
-  background-color: #1A202C;
-  color: #A0AEC0;
+.dark body {
+  background-color: #111827;
+  color: #F3F4F6;
 }
 
 a {
