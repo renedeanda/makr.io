@@ -187,7 +187,7 @@ const PlatformBadges = ({ platforms }) => (
 
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const themeColor = theme === 'dark' ? '#1F2937' : '#FFFFFF';
+  const themeColor = theme === 'dark' ? '#111827' : '#FFFFFF';
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-900'}`}>

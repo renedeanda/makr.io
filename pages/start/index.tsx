@@ -104,9 +104,9 @@ export default function StartPage() {
       {/* The Workflow */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">The 8 Steps</h2>
-        <div className="space-y-8">
+        <div className="space-y-6">
           {STEPS.map((step, index) => (
-            <Link key={step.id} href={step.path}>
+            <Link key={step.id} href={step.path} className="block mb-6">
               <div
                 className={cn(
                   'flex items-start gap-5 rounded-lg border p-6 transition-all cursor-pointer group',
