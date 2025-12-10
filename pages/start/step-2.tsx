@@ -28,7 +28,12 @@ export default function Step2() {
     : 'my-app';
 
   return (
-    <StartLayout title="Step 2: Create Your GitHub Repository">
+    <StartLayout
+      title="Step 2: Create Your GitHub Repository"
+      description="Set up version control for your project on GitHub. Learn how to create a repository, initialize it with a README, and prepare for deployment. Takes ~5 minutes."
+      ogImage="https://makr.io/og-start-step-2.png"
+      canonical="https://makr.io/start/step-2"
+    >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
           <span>STEP 2</span>

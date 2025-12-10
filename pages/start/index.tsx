@@ -17,7 +17,9 @@ export default function StartPage() {
   return (
     <StartLayout
       title="Ship Your First App"
-      description="Learn to ship your first web app using AI tools in just a few hours"
+      description="An interactive, step-by-step guide teaching you to ship a real web app—from idea to production—using AI coding tools. Build and deploy in 2-5 hours, no technical experience required."
+      ogImage="https://makr.io/og-start.png"
+      canonical="https://makr.io/start"
     >
       {/* Hero Section */}
       <div className="mb-16">

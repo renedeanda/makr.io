@@ -114,7 +114,9 @@ export default function Step1() {
   return (
     <StartLayout
       title="Step 1: Generate Your Idea"
-      description="Use AI to brainstorm and refine your first app idea"
+      description="Use AI to brainstorm and refine your first app idea. Learn how to prompt AI assistants to generate simple, buildable web app concepts. Takes ~5 minutes."
+      ogImage="https://makr.io/og-start-step-1.png"
+      canonical="https://makr.io/start/step-1"
     >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">

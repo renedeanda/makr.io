@@ -33,7 +33,12 @@ export default function Step7() {
   const linkedinPost = `Excited to share my first web app! 🎉\n\nI just built and deployed ${appName} using AI coding tools in ${formatDuration(buildTime)}. The barrier to building software has never been lower.\n\nCheck it out: ${appUrl}\n\nBuilt following makr.io/start guide\n\n#webdevelopment #ai #buildinpublic`;
 
   return (
-    <StartLayout title="Step 7: Share Your Launch">
+    <StartLayout
+      title="Step 7: Share Your Launch"
+      description="Celebrate and share your accomplishment with the world. Learn how to build in public and share your work on social media. Takes ~5 minutes."
+      ogImage="https://makr.io/og-start-step-7.png"
+      canonical="https://makr.io/start/step-7"
+    >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
           <span>STEP 7</span>

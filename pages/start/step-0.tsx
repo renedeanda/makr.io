@@ -46,7 +46,9 @@ export default function Step0() {
   return (
     <StartLayout
       title="Step 0: Set Up Your Developer Accounts"
-      description="Create free accounts for GitHub, Vercel, Cloudflare, and your AI assistant"
+      description="Create free accounts for GitHub, Vercel, Cloudflare, and your AI assistant. Learn the professional developer workflow used by top engineers. Setup takes ~10 minutes."
+      ogImage="https://makr.io/og-start-step-0.png"
+      canonical="https://makr.io/start/step-0"
     >
       {/* Header */}
       <header className="mb-8">

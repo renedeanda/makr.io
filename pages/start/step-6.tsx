@@ -30,7 +30,12 @@ export default function Step6() {
   };
 
   return (
-    <StartLayout title="Step 6: Get Your Custom Domain">
+    <StartLayout
+      title="Step 6: Get Your Custom Domain"
+      description="Buy a custom domain on Cloudflare and connect it to your app. Learn DNS configuration and make your app feel professional. Takes ~15 minutes, costs ~$15/year."
+      ogImage="https://makr.io/og-start-step-6.png"
+      canonical="https://makr.io/start/step-6"
+    >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
           <span>STEP 6</span>
