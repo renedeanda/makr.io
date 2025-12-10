@@ -45,7 +45,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="https://makr.io/og-image.png" />
         
         {/* Additional SEO Meta Tags */}
-        <meta name="theme-color" content="#3B82F6" />
         <meta name="msapplication-TileColor" content="#3B82F6" />
         <link rel="canonical" href="https://makr.io" />
         
