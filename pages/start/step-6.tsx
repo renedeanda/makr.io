@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { useProgressStore } from '../../lib/store';
 import { cn } from '../../lib/utils';
@@ -17,11 +17,17 @@ const checklistItems: ChecklistItem[] = [
 
 export default function Step6() {
   const { theme } = useContext(ThemeContext);
-  const { completeStep, setCurrentStep } = useProgressStore();
+  const { completeStep, setCurrentStep, updateProject, currentProject } = useProgressStore();
+  const [customDomain, setCustomDomain] = useState(currentProject?.customDomain || '');
 
   useEffect(() => {
     setCurrentStep('step-6');
   }, [setCurrentStep]);
+
+  const handleDomainChange = (value: string) => {
+    setCustomDomain(value);
+    updateProject({ customDomain: value });
+  };
 
   return (
     <StartLayout title="Step 6: Get Your Custom Domain">
@@ -173,6 +179,45 @@ export default function Step6() {
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Then visit https://yourdomain.com and your app should load!
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Record Your Domain */}
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Record Your Domain</h2>
+          <div
+            className={cn(
+              'rounded-xl border p-6',
+              theme === 'dark' ? 'border-gray-700 bg-gray-800/50' : 'border-gray-200 bg-gray-50'
+            )}
+          >
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Your custom domain:
+                </label>
+                <input
+                  type="text"
+                  value={customDomain}
+                  onChange={(e) => handleDomainChange(e.target.value)}
+                  placeholder="e.g., myapp.com"
+                  className={cn(
+                    'w-full px-4 py-2 rounded-lg border',
+                    theme === 'dark'
+                      ? 'bg-gray-900 border-gray-700 text-gray-100'
+                      : 'bg-white border-gray-300 text-gray-900'
+                  )}
+                />
+              </div>
+
+              {customDomain && (
+                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                  <p className="text-sm text-green-800 dark:text-green-300">
+                    ✓ Your app will be live at: <strong>{customDomain}</strong>
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>
