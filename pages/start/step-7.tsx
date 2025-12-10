@@ -25,7 +25,8 @@ export default function Step7() {
 
   const buildTime = currentProject?.buildTimeSeconds || 0;
   const appName = currentProject?.name || 'Your App';
-  const appUrl = currentProject?.customDomain || currentProject?.vercelUrl || 'yourdomain.io';
+  const appUrl = currentProject?.customDomain || currentProject?.vercelUrl || 'example.com';
+  const hasRealDomain = !!(currentProject?.customDomain || currentProject?.vercelUrl);
 
   const blueskyPost = `Just shipped my first AI-built app! 🚀\n\nBuilt ${appName} in ${formatDuration(buildTime)} using AI tools\nLive at: ${appUrl}\n\nFollowing makr.io/start`;
 
@@ -62,7 +63,11 @@ export default function Step7() {
               You shipped your first app: <strong>{appName}</strong>
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Live at: <a href={`https://${appUrl}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">{appUrl}</a>
+              Live at: {hasRealDomain ? (
+                <a href={`https://${appUrl}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">{appUrl}</a>
+              ) : (
+                <span className="font-medium">{appUrl}</span>
+              )}
             </p>
             {buildTime > 0 && (
               <p className="text-gray-600 dark:text-gray-400">

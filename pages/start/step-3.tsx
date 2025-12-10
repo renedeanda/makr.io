@@ -34,7 +34,32 @@ const tools = [
   },
 ];
 
-const claudeCodePrompt = `Build [your-app-name] - a [description].
+export default function Step3() {
+  const { theme } = useContext(ThemeContext);
+  const { completeStep, setCurrentStep, currentProject, updateProject } = useProgressStore();
+  const [selectedTool, setSelectedTool] = useState('');
+
+  useEffect(() => {
+    setCurrentStep('step-3');
+  }, [setCurrentStep]);
+
+  const suggestedRepoName = currentProject?.name
+    ? currentProject.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+    : 'my-app';
+
+  const claudeCodePrompt = currentProject?.name
+    ? `Build ${currentProject.name}${currentProject.idea ? ` - ${currentProject.idea}` : ''}.
+
+Tech stack: React + Vite, TypeScript, Tailwind CSS
+
+Features:
+- [Feature 1]
+- [Feature 2]
+- Mobile responsive
+- Clean, modern UI
+
+Make it production-ready and delightful.`
+    : `Build [your-app-name] - a [description].
 
 Tech stack: React + Vite, TypeScript, Tailwind CSS
 
@@ -45,15 +70,6 @@ Features:
 - Clean, modern UI
 
 Make it production-ready and delightful.`;
-
-export default function Step3() {
-  const { theme } = useContext(ThemeContext);
-  const { completeStep, setCurrentStep, currentProject, updateProject } = useProgressStore();
-  const [selectedTool, setSelectedTool] = useState('');
-
-  useEffect(() => {
-    setCurrentStep('step-3');
-  }, [setCurrentStep]);
 
   const handleComplete = () => {
     if (selectedTool) {
@@ -130,7 +146,7 @@ export default function Step3() {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold mb-2">1. Clone your repo</h3>
-                <CodeBlock code={`git clone https://github.com/[user]/[repo]\ncd [repo]`} />
+                <CodeBlock code={`git clone https://github.com/[user]/${suggestedRepoName}\ncd ${suggestedRepoName}`} />
               </div>
 
               <div>

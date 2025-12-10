@@ -16,11 +16,16 @@ const checklistItems: ChecklistItem[] = [
 
 export default function Step2() {
   const { theme } = useContext(ThemeContext);
-  const { completeStep, setCurrentStep } = useProgressStore();
+  const { completeStep, setCurrentStep, currentProject } = useProgressStore();
 
   useEffect(() => {
     setCurrentStep('step-2');
   }, [setCurrentStep]);
+
+  // Generate a suggested repo name from project name
+  const suggestedRepoName = currentProject?.name
+    ? currentProject.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+    : 'my-app';
 
   return (
     <StartLayout title="Step 2: Create Your GitHub Repository">
@@ -67,7 +72,11 @@ export default function Step2() {
             <div>
               <h3 className="font-semibold mb-2">2. Configure Your Repository</h3>
               <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <p><strong>Repository name:</strong> Use lowercase-with-hyphens (e.g., qr-generator)</p>
+                <p><strong>Repository name:</strong> {currentProject?.name ? (
+                  <>Use <code className="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded">{suggestedRepoName}</code> (from your project: {currentProject.name})</>
+                ) : (
+                  'Use lowercase-with-hyphens (e.g., my-app)'
+                )}</p>
                 <p><strong>Visibility:</strong> Public (recommended) or Private</p>
                 <p><strong>Initialize:</strong> ✓ Add a README file</p>
               </div>
@@ -76,10 +85,10 @@ export default function Step2() {
             <div>
               <h3 className="font-semibold mb-2">3. Save Your Repository URL</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                Format: https://github.com/[username]/[repo-name]
+                Format: https://github.com/[username]/{suggestedRepoName}
               </p>
               <CodeBlock
-                code="https://github.com/yourusername/your-app-name"
+                code={`https://github.com/yourusername/${suggestedRepoName}`}
                 showCopy={false}
               />
             </div>
