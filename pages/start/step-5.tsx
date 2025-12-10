@@ -17,11 +17,15 @@ const checklistItems: ChecklistItem[] = [
 
 export default function Step5() {
   const { theme } = useContext(ThemeContext);
-  const { completeStep, setCurrentStep } = useProgressStore();
+  const { completeStep, setCurrentStep, currentProject } = useProgressStore();
 
   useEffect(() => {
     setCurrentStep('step-5');
   }, [setCurrentStep]);
+
+  const suggestedRepoName = currentProject?.name
+    ? currentProject.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+    : 'your-app-name';
 
   return (
     <StartLayout title="Step 5: Deploy to Vercel">
@@ -154,10 +158,10 @@ export default function Step5() {
             Success! Your app is LIVE!
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-3">
-            Vercel gives you a temporary URL like: <code className="font-mono text-sm">your-app-name.vercel.app</code>
+            Vercel gives you a temporary URL like: <code className="font-mono text-sm">{suggestedRepoName}.vercel.app</code>
           </p>
           <p className="text-gray-700 dark:text-gray-300">
-            Test it by clicking "Visit" or copying the URL. Your app should load!
+            Test it by clicking "Visit" or copying the URL. {currentProject?.name && `Your ${currentProject.name} app`} should load!
           </p>
         </section>
 
