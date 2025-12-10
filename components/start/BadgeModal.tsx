@@ -24,31 +24,29 @@ export default function BadgeModal({ isOpen, onClose }: BadgeModalProps) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop + Centered Container */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/50 z-50"
-          />
-
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className={cn(
-              'fixed z-50',
-              'top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2',
-              'w-[calc(100%-2rem)] max-w-2xl',
-              'max-h-[85vh] overflow-y-auto',
-              'rounded-xl shadow-2xl p-4 sm:p-6',
-              theme === 'dark'
-                ? 'bg-gray-900 border border-gray-700'
-                : 'bg-white border border-gray-200'
-            )}
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
           >
+            {/* Modal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              onClick={(e) => e.stopPropagation()}
+              className={cn(
+                'w-full max-w-2xl',
+                'max-h-[85vh] overflow-y-auto',
+                'rounded-xl shadow-2xl p-4 sm:p-6',
+                theme === 'dark'
+                  ? 'bg-gray-900 border border-gray-700'
+                  : 'bg-white border border-gray-200'
+              )}
+            >
             <div className="flex items-center justify-between mb-4 sm:mb-6">
               <div className="flex items-center gap-2 sm:gap-3">
                 <FaTrophy className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500" />
@@ -110,6 +108,7 @@ export default function BadgeModal({ isOpen, onClose }: BadgeModalProps) {
                 );
               })}
             </div>
+            </motion.div>
           </motion.div>
         </>
       )}

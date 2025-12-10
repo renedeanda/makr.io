@@ -199,7 +199,7 @@ export default function Home() {
       </Head>
 
       {/* Clean Navigation */}
-      <nav className={`border-b ${theme === 'dark' ? 'border-gray-800 bg-darkBackground' : 'border-gray-200 bg-white'}`}>
+      <nav className={`border-b ${theme === 'dark' ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-8">
             <a href="/" className="text-xl font-semibold hover:opacity-70 transition-opacity">
