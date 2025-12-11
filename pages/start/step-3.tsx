@@ -79,7 +79,12 @@ Make it production-ready and delightful.`;
   };
 
   return (
-    <StartLayout title="Step 3: Build with AI Tool">
+    <StartLayout
+      title="Step 3: Build with AI Tool"
+      description="Build your first web app using AI coding tools like Claude Code, Lovable, Cursor, or v0. Learn to use AI assistants for development. Takes 1-4 hours."
+      ogImage="https://makr.io/og-start-step-3.png"
+      canonical="https://makr.io/start/step-3"
+    >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
           <span>STEP 3</span>

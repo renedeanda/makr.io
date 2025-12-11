@@ -28,7 +28,12 @@ export default function Step5() {
     : 'your-app-name';
 
   return (
-    <StartLayout title="Step 5: Deploy to Vercel">
+    <StartLayout
+      title="Step 5: Deploy to Vercel"
+      description="Deploy your app to Vercel and get it live on the web. Learn how modern deployment platforms work with GitHub integration. Takes ~5 minutes."
+      ogImage="https://makr.io/og-start-step-5.png"
+      canonical="https://makr.io/start/step-5"
+    >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
           <span>STEP 5</span>

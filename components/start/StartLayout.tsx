@@ -11,19 +11,41 @@ interface StartLayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  ogImage?: string;
+  canonical?: string;
 }
 
-export default function StartLayout({ children, title, description }: StartLayoutProps) {
+export default function StartLayout({ children, title, description, ogImage, canonical }: StartLayoutProps) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [showBadgeModal, setShowBadgeModal] = useState(false);
   const pageTitle = title ? `${title} - makr.io/start` : 'Ship Your First App - makr.io/start';
+  const pageDescription = description || 'Learn to ship your first web app using AI tools in just a few hours';
+  const pageOgImage = ogImage || 'https://makr.io/og-start.png';
+  const pageUrl = canonical || 'https://makr.io/start';
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={description || 'Learn to ship your first web app using AI tools in just a few hours'} />
+        <meta name="description" content={pageDescription} />
         <meta name="theme-color" content={theme === 'dark' ? '#111827' : '#FFFFFF'} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={pageOgImage} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:site_name" content="makr.io" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={pageOgImage} />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={pageUrl} />
       </Head>
 
       {/* Fixed Header */}

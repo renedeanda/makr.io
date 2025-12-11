@@ -20,7 +20,12 @@ export default function Step4() {
   }, [setCurrentStep]);
 
   return (
-    <StartLayout title="Step 4: Save Your Work to GitHub">
+    <StartLayout
+      title="Step 4: Save Your Work to GitHub"
+      description="Commit and push your code to GitHub. Learn version control basics and prepare your app for deployment. Takes ~2 minutes."
+      ogImage="https://makr.io/og-start-step-4.png"
+      canonical="https://makr.io/start/step-4"
+    >
       <header className="mb-8">
         <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
           <span>STEP 4</span>
