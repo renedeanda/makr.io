@@ -33,6 +33,14 @@ const recentProjects = [
     madeWith: ["Lovable"]
   },
   {
+    title: "PDF Tools",
+    description: "Free, browser-based PDF tools. Merge, split, compress, and convert PDFs locally. No uploads required, no limits.",
+    link: "https://pdf.makr.io",
+    githubLink: "https://github.com/renedeanda/pdf.makr.io",
+    emoji: "📄",
+    madeWith: ["Claude Code"]
+  },
+  {
     title: "ev.makr.io",
     description: "A comprehensive, beginner-friendly educational resource for new and prospective electric vehicle owners in the United States. Learn about charging, vehicles, and EV ownership.",
     link: "https://ev.makr.io",
